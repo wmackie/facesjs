@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <g id="blazer">
+    <!-- Left front panel -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M0,610 L0,540 C30,522 74,506 116,500 L152,496 L158,524 L200,610 Z"/>
+    <!-- Right front panel -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M400,610 L400,540 C370,522 326,506 284,500 L248,496 L242,524 L200,610 Z"/>
+    <!-- Left lapel — faction-colored lining visible -->
+    <path fill="$[primary]" stroke="#000" stroke-width="2"
+      d="M116,500 L152,496 L158,522 L138,516 C126,511 113,506 116,500 Z"/>
+    <!-- Right lapel -->
+    <path fill="$[primary]" stroke="#000" stroke-width="2"
+      d="M284,500 L248,496 L242,522 L262,516 C274,511 287,506 284,500 Z"/>
+    <!-- Center seam -->
+    <line x1="200" y1="522" x2="200" y2="610" stroke="#000" stroke-width="1.5" opacity="0.4"/>
+    <!-- Buttons -->
+    <circle cx="200" cy="542" r="5" fill="#111" stroke="#444" stroke-width="1"/>
+    <circle cx="200" cy="564" r="5" fill="#111" stroke="#444" stroke-width="1"/>
+    <circle cx="200" cy="586" r="5" fill="#111" stroke="#444" stroke-width="1"/>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <g id="suit-jacket">
+    <!-- Left front panel -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M0,610 L0,542 C28,524 70,508 114,502 L146,498 L148,526 L200,610 Z"/>
+    <!-- Right front panel -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M400,610 L400,542 C372,524 330,508 286,502 L254,498 L252,526 L200,610 Z"/>
+    <!-- Left peak lapel (points upward — villain-chic) -->
+    <path fill="$[primary]" stroke="#000" stroke-width="2" stroke-linejoin="round"
+      d="M114,502 L128,490 L146,498 L148,524 L132,514 C122,509 112,507 114,502 Z"/>
+    <!-- Right peak lapel -->
+    <path fill="$[primary]" stroke="#000" stroke-width="2" stroke-linejoin="round"
+      d="M286,502 L272,490 L254,498 L252,524 L268,514 C278,509 288,507 286,502 Z"/>
+    <!-- Breast pocket square ($[accent]) -->
+    <polygon points="168,532 180,530 179,520 167,522" fill="$[accent]" stroke="#000" stroke-width="1"/>
+    <!-- Center seam -->
+    <line x1="200" y1="524" x2="200" y2="610" stroke="#000" stroke-width="1.5" opacity="0.4"/>
+    <!-- 2-button suit -->
+    <circle cx="200" cy="548" r="5" fill="#111" stroke="#444" stroke-width="1"/>
+    <circle cx="200" cy="573" r="5" fill="#111" stroke="#444" stroke-width="1"/>
+    <!-- Sleeve button detail (right cuff, partially visible) -->
+    <circle cx="326" cy="600" r="3" fill="#111" stroke="#444" stroke-width="1"/>
+    <circle cx="337" cy="602" r="3" fill="#111" stroke="#444" stroke-width="1"/>
+  </g>
+</svg>

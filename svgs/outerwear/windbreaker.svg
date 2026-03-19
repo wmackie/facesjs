@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <g id="windbreaker">
+    <!-- Main body -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M0,610 L0,532 C26,516 68,503 112,497 L148,493 L148,610 Z"/>
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M400,610 L400,532 C374,516 332,503 288,497 L252,493 L252,610 Z"/>
+    <!-- Center panel -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="4"
+      d="M148,493 C168,487 188,485 200,485 C212,485 232,487 252,493 L252,610 L148,610 Z"/>
+    <!-- Collar band (stand-up tactical collar) -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="3" stroke-linejoin="round"
+      d="M112,497 C148,488 172,485 200,485 C228,485 252,488 288,497 L288,510 C252,503 228,500 200,500 C172,500 148,503 112,510 Z"/>
+    <!-- Left accent stripe ($[primary]) -->
+    <path fill="$[primary]" stroke="none"
+      d="M0,534 C22,518 65,505 110,499 L114,497 L110,610 L0,610 Z" opacity="0.75"/>
+    <!-- Right accent stripe -->
+    <path fill="$[primary]" stroke="none"
+      d="M400,534 C378,518 335,505 290,499 L286,497 L290,610 L400,610 Z" opacity="0.75"/>
+    <!-- Raglan seam lines (shoulder to armhole) -->
+    <line x1="148" y1="493" x2="0" y2="534" stroke="#000" stroke-width="2" opacity="0.35"/>
+    <line x1="252" y1="493" x2="400" y2="534" stroke="#000" stroke-width="2" opacity="0.35"/>
+    <!-- Center zip track -->
+    <rect x="197" y="493" width="6" height="117" rx="1" fill="#777" stroke="#555" stroke-width="1"/>
+    <!-- Zip teeth -->
+    <line x1="200" y1="500" x2="200" y2="610" stroke="#aaa" stroke-width="1.5" stroke-dasharray="6,5"/>
+    <!-- Zipper pull tab -->
+    <rect x="195" y="490" width="10" height="7" rx="2" fill="#bbb" stroke="#777" stroke-width="1"/>
+  </g>
+</svg>
