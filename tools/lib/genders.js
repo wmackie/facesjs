@@ -3,9 +3,6 @@ export const genders = {
     beret: "both",
     fedora: "both",
     fedora2: "both",
-    hat: "both",
-    hat2: "both",
-    hat3: "both",
     none: "both",
     "stealth-beanie": "both",
   },
@@ -185,7 +182,6 @@ export const genders = {
     wilt: "male",
   },
   glasses: {
-    facemask: "both",
     "glasses1-primary": "both",
     "glasses1-secondary": "both",
     "glasses2-black": "both",
