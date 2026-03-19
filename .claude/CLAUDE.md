@@ -65,7 +65,11 @@ After every meaningful change:
 
 1. Run `pnpm run build` — fix any errors before proceeding.
 2. Run `pnpm test` — fix failures before proceeding.
-3. If visual output changed, start `pnpm run dev` and screenshot the result with Playwright.
+3. If visual output changed, start `pnpm run dev` and screenshot the result:
+   ```
+   npx playwright screenshot --browser chromium "http://localhost:5174/facesjs" screenshots/YYYY-MM-DD_label.png
+   ```
+   Screenshots go in `screenshots/` (project root, gitignored). Naming: `YYYY-MM-DD_<what-changed>.png` so they sort chronologically. Log the filename in DEVLOG.
 4. Compare against the Ready State definition above: does the output look like a spy, not an athlete?
 5. If anything regressed, roll back and log what happened before retrying.
 6. Only mark a task done and move to the next one after passing self-evaluation.
