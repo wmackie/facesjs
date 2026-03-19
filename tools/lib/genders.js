@@ -1,6 +1,8 @@
 export const genders = {
   accessories: {
+    beret: "both",
     fedora: "both",
+    fedora2: "both",
     "eye-black": "both",
     hat: "both",
     hat2: "both",
@@ -283,6 +285,7 @@ export const genders = {
   },
   jersey: {
     mockneck: "both",
+    "turtleneck-adobe": "both",
     baseball: "both",
     baseball2: "both",
     baseball3: "both",
