@@ -10,31 +10,31 @@ _(nothing currently blocking)_
 
 ## P2 — Core Work
 
-- [ ] Wire up `outerwear` in the editor (`public/editor/stateStore.ts`) — currently outerwear layer exists but may not be exposed in editor UI
-- [ ] Audit hat SVGs (`hat.svg`, `hat2.svg`, `hat3.svg`) — likely sports caps; replace with spy-appropriate variants or remove
-- [ ] Audit glasses SVGs — `facemask` is sports-specific; remove it. Evaluate other frames for spy aesthetic fit.
-- [ ] Audit `miscLine` SVGs (forehead lines, chin lines) — check if any are sports-specific; likely fine
-- [ ] Audit body SVGs — check for sports-specific shape cues; may need redrawing for spy aesthetic
-- [ ] Add `outerwearBg` variants (hood-on-shoulder silhouettes for trench coat, overcoat) — currently only `none`
-- [ ] Tune `generate()` defaults: bias outerwear toward dark/muted (charcoal, navy, black) and increase outerwear frequency
+- [ ] Visual QA: start dev server, screenshot sample faces, verify spy aesthetic is landing
+- [ ] Audit `miscLine` SVGs — check forehead/chin lines work with redrawn jersey style
+- [ ] Add `outerwearBg` variants — hood/collar silhouettes for trench coat and overcoat (currently only `none`)
+- [ ] Review `turtleneck-adobe.svg` — SVG has no color token fill; likely renders in black only; add `$[primary]`
 
 ## P3 — Polish
 
-- [ ] Consider `bodyShadow` layer (planned but not implemented — face-contour shadows tied to body.id)
-- [ ] Evaluate whether `fedora2.svg` should replace `fedora.svg` as the main fedora
-- [ ] Add sunglasses variant to `glasses` feature
-- [ ] Redraw hat SVGs in spy-appropriate style (if keeping the hat feature at all)
+- [ ] Consider `bodyShadow` layer (face-contour shadows tied to body.id — not yet implemented)
+- [ ] Add sunglasses variant to `glasses`
+- [ ] Fedora2 vs fedora — decide which is canonical; remove or rename the other
+- [ ] Tune outerwear probability and color distribution based on visual QA results
 
 ---
 
 ## Done
 
-- [x] Scaffolded `outerwear` and `outerwearBg` layers in common.ts, display.ts, generate.ts, genders.js (2026-03-16)
-- [x] Added spy accessories: `fedora.svg`, `fedora2.svg`, `stealth-beanie.svg`, `beret.svg` (2026-03-16)
+- [x] Scaffolded `outerwear` and `outerwearBg` layers (2026-03-16)
+- [x] Added spy accessories: fedora, fedora2, stealth-beanie, beret (2026-03-16)
 - [x] Fixed build/prepare scripts (2026-03-16)
 - [x] Created `none.svg` and `overcoat.svg` in svgs/outerwear/ (2026-03-16)
-- [x] Drew `blazer.svg`, `trench-coat.svg`, `suit-jacket.svg`, `windbreaker.svg` outerwear SVGs (2026-03-19)
-- [x] Removed sport-specific accessories: `eye-black.svg`, `headband.svg`, `headband-high.svg` (files + genders.js) (2026-03-19)
-- [x] Removed sport jerseys: baseball (x4), hockey (x4) SVGs + genders.js entries (2026-03-19)
+- [x] Drew blazer, trench-coat, suit-jacket, windbreaker outerwear SVGs (2026-03-19)
+- [x] Removed sport accessories: eye-black, headband, headband-high (files + genders.js) (2026-03-19)
+- [x] Removed sport jerseys: baseball x4, hockey x4 (files + genders.js) (2026-03-19)
 - [x] Redrawn jersey layer: dress shirt, crew neck, v-neck, henley, mandarin collar (2026-03-19)
-- [x] Updated CLAUDE.md: autonomous operation mandate, artistic freedom directive, ready-state definition (2026-03-19)
+- [x] Updated CLAUDE.md: autonomous operation mandate, artistic freedom, ready-state definition (2026-03-19)
+- [x] Removed sports hats (hat, hat2, hat3) and facemask glasses (2026-03-19)
+- [x] Outerwear already wired in editor stateStore.ts — confirmed (2026-03-19)
+- [x] Tuned generate() defaults: muted team colors, randomized gender (2026-03-19)
