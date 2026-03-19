@@ -1,9 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
-	<g id="basketball 3">
-		<path id="jersey" class="jersey" d="M80 610C80 610 90 580 90 520C110 510 110 510 110 510C110 510 120 590 200 590C280 590 290 510 290 510C290 510 290 510 310 520C310 580 320 610 320 610L80 610Z" fill="$[primary]" stroke="#000000" stroke-width="6"/>
-		<path id="stripe-outline" class="outline" d="M90 520C90 580 80 610 80 610M310 520C310 580 320 610 320 610M110 510C110 510 120 590 200 590C280 590 290 510 290 510" fill="none" stroke="#000000" stroke-width="16"/>
-		<path id="stripe-accent" class="stripe-accent" d="M90 520C90 580 80 610 80 610M310 520C310 580 320 610 320 610M110 512C110 512 125 590 200 590C275 590 290 512 290 512" fill="none" stroke="$[accent]" stroke-width="8"/>
-		<path id="stripe-primary" class="stripe-primary" d="M86 522C86 582 76 610 76 610M314 522C314 582 324 610 324 610M114 510C114 510 125 586 200 586C275 586 286 510 286 510" fill="none" stroke="$[primary]" stroke-width="4"/>
-		<path id="stripe-secondary" class="stripe-secondary" d="M94 518C94 578 84 610 84 610M306 518C306 578 316 610 316 610M106 514C106 514 118 594 200 594C282 594 294 514 294 514" fill="none" stroke="$[secondary]" stroke-width="4"/>
-	</g>
+  <g id="henley">
+    <!-- Main body -->
+    <path d="M80,610 L80,520 C110,510 110,510 110,510 C120,590 200,592 200,592 C200,592 280,590 290,510 C290,510 290,510 320,520 L320,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+    <!-- Neckline seam -->
+    <path d="M142,504 C158,497 178,494 200,494 C222,494 242,497 258,504" fill="none" stroke="#000" stroke-width="2.5" opacity="0.5"/>
+    <!-- Henley placket -->
+    <rect x="194" y="504" width="12" height="42" rx="3" fill="$[primary]" stroke="#000" stroke-width="2"/>
+    <!-- Placket buttons -->
+    <circle cx="200" cy="516" r="3.5" fill="#ddd" stroke="#888" stroke-width="1"/>
+    <circle cx="200" cy="528" r="3.5" fill="#ddd" stroke="#888" stroke-width="1"/>
+    <circle cx="200" cy="540" r="3.5" fill="#ddd" stroke="#888" stroke-width="1"/>
+  </g>
 </svg>

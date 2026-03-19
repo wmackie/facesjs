@@ -1,3 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
-	<path id="jersey" d="M80 610C80 610 90 580 90 520C110 510 110 510 110 510C110 510 120 590 200 590C280 590 290 510 290 510C290 510 290 510 310 520C310 580 320 610 320 610L80 610Z" fill="$[primary]" stroke="#000000" stroke-width="6"/>
+  <g id="dress-shirt">
+    <!-- Main shirt body -->
+    <path d="M80,610 L80,520 C110,510 110,510 110,510 C120,590 200,592 200,592 C200,592 280,590 290,510 C290,510 290,510 320,520 L320,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+    <!-- Left collar wing -->
+    <path d="M110,510 C118,504 128,498 138,494 L152,510 L134,516 C122,519 112,516 110,510 Z" fill="$[primary]" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+    <!-- Right collar wing -->
+    <path d="M290,510 C282,504 272,498 262,494 L248,510 L266,516 C278,519 288,516 290,510 Z" fill="$[primary]" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+    <!-- Button placket -->
+    <rect x="196" y="510" width="8" height="100" rx="1" fill="$[primary]" stroke="#000" stroke-width="1.5" opacity="0.6"/>
+    <!-- Buttons -->
+    <circle cx="200" cy="528" r="4" fill="#ddd" stroke="#999" stroke-width="1"/>
+    <circle cx="200" cy="548" r="4" fill="#ddd" stroke="#999" stroke-width="1"/>
+    <circle cx="200" cy="568" r="4" fill="#ddd" stroke="#999" stroke-width="1"/>
+    <circle cx="200" cy="588" r="4" fill="#ddd" stroke="#999" stroke-width="1"/>
+  </g>
 </svg>
