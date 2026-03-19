@@ -19,8 +19,11 @@ _(nothing currently blocking)_
 
 - [ ] Consider `bodyShadow` layer (face-contour shadows tied to body.id — not yet implemented)
 - [ ] Add sunglasses variant to `glasses`
-- [ ] Fedora2 vs fedora — decide which is canonical; remove or rename the other
 - [ ] Tune outerwear probability and color distribution based on visual QA results
+
+## Deferred — After face system is solid
+
+- [ ] **Age effects:** nasolabial folds, crow's feet, under-eye bags, forehead wrinkles — scaled by an `age` parameter on the face config. Reference implementation in `demos/portrait_demo.html`. Only worth doing once the base face SVGs (eyes, heads, noses) have been overhauled — wrinkles on a cartoon face that doesn't yet read as a person won't help.
 
 ---
 
