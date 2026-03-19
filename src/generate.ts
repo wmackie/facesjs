@@ -48,7 +48,8 @@ export const colors = {
   black: { skin: ["#ad6453", "#74453d", "#5c3937"], hair: ["#272421"] },
 };
 
-const defaultTeamColors: TeamColors = ["#89bfd3", "#7a1319", "#07364f"];
+// Muted spy-appropriate defaults: dark slate, warm grey, aged gold
+const defaultTeamColors: TeamColors = ["#2C3A47", "#6B7280", "#9C7C3C"];
 
 const roundTwoDecimals = (x: number) => Math.round(x * 100) / 100;
 
@@ -101,7 +102,7 @@ export const generate = (
   overrides?: Overrides,
   options?: { gender?: Gender; race?: Race; relative?: FaceConfig },
 ): FaceConfig => {
-  const gender = options?.gender ?? "male";
+  const gender = options?.gender ?? randChoice(["male", "female"] as Gender[]);
 
   let face;
   if (options?.relative) {
