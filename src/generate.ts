@@ -126,6 +126,9 @@ export const generate = (
             ? getID("hairBg", gender)
             : "none",
       },
+      outerwearBg: {
+        id: "none",
+      },
       body: {
         id: getID("body", gender),
         color: skinColor,
@@ -186,6 +189,18 @@ export const generate = (
       },
       accessories: {
         id: Math.random() < 0.2 ? getID("accessories", gender) : "none",
+      },
+      outerwear: {
+        id: Math.random() < 0.5 ? getID("outerwear", gender) : "none",
+        color: randChoice([
+          "#1C1C1C",
+          "#36454F",
+          "#1B2A4A",
+          "#3D2B1F",
+          "#C19A6B",
+          "#4A5240",
+          "#4A4A4A",
+        ]),
       },
     };
   }

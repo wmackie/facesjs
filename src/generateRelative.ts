@@ -79,6 +79,10 @@ export const generateRelative = ({
       shave: "always",
     },
     jersey: "never",
+    outerwear: {
+      id: "always",
+      color: "always",
+    },
     miscLine: "sometimes",
     mouth: "sometimes",
     nose: "sometimes",

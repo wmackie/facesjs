@@ -247,6 +247,28 @@ const gallerySectionInfos: (Pick<
     selectionType: "svgs",
   },
   {
+    key: "outerwear.id",
+    text: "Outerwear Style",
+    selectionType: "svgs",
+  },
+  {
+    key: "outerwear.color",
+    text: "Outerwear Color",
+    selectionType: "color",
+    colorFormat: "hex",
+    renderOptions: {
+      valuesToRender: [
+        "#1C1C1C",
+        "#36454F",
+        "#1B2A4A",
+        "#3D2B1F",
+        "#C19A6B",
+        "#4A5240",
+        "#4A4A4A",
+      ],
+    },
+  },
+  {
     key: "teamColors",
     text: "Team Colors",
     selectionType: "colors",

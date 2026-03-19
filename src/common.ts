@@ -17,10 +17,12 @@ export const features = [
   "hair",
   "hairBg",
   "head",
+  "outerwearBg",
   "jersey",
   "miscLine",
   "mouth",
   "nose",
+  "outerwear",
   "smileLine",
 ] as const;
 export type Feature = (typeof features)[number];
@@ -43,6 +45,9 @@ export type FaceConfig = {
   fatness: number;
   teamColors: TeamColors;
   hairBg: {
+    id: string;
+  };
+  outerwearBg: {
     id: string;
   };
   body: {
@@ -101,5 +106,9 @@ export type FaceConfig = {
   };
   accessories: {
     id: string;
+  };
+  outerwear: {
+    id: string;
+    color: string;
   };
 };

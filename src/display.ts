@@ -111,7 +111,9 @@ const drawFeature = (
     return;
   }
   if (
-    ["hat", "hat2", "hat3"].includes(face.accessories.id) &&
+    ["hat", "hat2", "hat3", "fedora", "stealth-beanie"].includes(
+      face.accessories.id,
+    ) &&
     info.name == "hair"
   ) {
     if (
@@ -175,6 +177,10 @@ const drawFeature = (
 
   featureSVGString = featureSVGString.replace("$[skinColor]", face.body.color);
   featureSVGString = featureSVGString.replace(
+    /\$\[outerwearColor\]/g,
+    face.outerwear.color,
+  );
+  featureSVGString = featureSVGString.replace(
     /\$\[hairColor\]/g,
     face.hair.color,
   );
@@ -224,7 +230,11 @@ const drawFeature = (
     // Flip if feature.flip is specified or if this is the second position (for eyes and eyebrows). Scale if feature.size is specified.
     // @ts-expect-error
     const scale = feature.hasOwnProperty("size") ? feature.size : 1;
-    if (info.name === "body" || info.name === "jersey") {
+    if (
+      info.name === "body" ||
+      info.name === "jersey" ||
+      info.name === "outerwear"
+    ) {
       // @ts-expect-error
       scaleCentered(svg.lastChild, bodySize, 1);
       // @ts-expect-error
@@ -288,11 +298,19 @@ export const display = (
       scaleFatness: true,
     },
     {
+      name: "outerwearBg",
+      positions: [null],
+    },
+    {
       name: "body",
       positions: [null],
     },
     {
       name: "jersey",
+      positions: [null],
+    },
+    {
+      name: "outerwear",
       positions: [null],
     },
     {

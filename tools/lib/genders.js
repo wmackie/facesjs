@@ -1,5 +1,6 @@
 export const genders = {
   accessories: {
+    fedora: "both",
     "eye-black": "both",
     hat: "both",
     hat2: "both",
@@ -7,6 +8,7 @@ export const genders = {
     "headband-high": "both",
     headband: "both",
     none: "both",
+    "stealth-beanie": "both",
   },
   body: {
     body: "both",
@@ -190,6 +192,8 @@ export const genders = {
     "glasses2-black": "both",
     "glasses2-primary": "both",
     "glasses2-secondary": "both",
+    "glasses3-oval": "both",
+    "glasses3-round": "both",
     none: "both",
   },
   hair: {
@@ -278,6 +282,7 @@ export const genders = {
     female3: "female",
   },
   jersey: {
+    mockneck: "both",
     baseball: "both",
     baseball2: "both",
     baseball3: "both",
@@ -347,6 +352,17 @@ export const genders = {
     nose9: "both",
     pinocchio: "both",
     small: "both",
+  },
+  outerwearBg: {
+    none: "both",
+  },
+  outerwear: {
+    none: "both",
+    blazer: "both",
+    "trench-coat": "both",
+    "suit-jacket": "both",
+    windbreaker: "both",
+    overcoat: "both",
   },
   smileLine: {
     line1: "both",
