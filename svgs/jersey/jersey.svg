@@ -1,17 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
   <g id="dress-shirt">
-    <!-- Main shirt body -->
-    <path d="M80,610 L80,520 C110,510 110,510 110,510 C120,590 200,592 200,592 C200,592 280,590 290,510 C290,510 290,510 320,520 L320,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+    <!-- Shirt body with shallow neckline opening -->
+    <path d="M80,610 L80,520 C90,515 100,512 110,510 Q155,528 200,530 Q245,528 290,510 C300,512 310,515 320,520 L320,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
     <!-- Left collar wing -->
-    <path d="M110,510 C118,504 128,498 138,494 L152,510 L134,516 C122,519 112,516 110,510 Z" fill="$[primary]" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M110,510 C118,503 130,497 142,494 L154,508 L136,514 C122,517 111,514 110,510 Z" fill="$[primary]" stroke="#000" stroke-width="2.5" stroke-linejoin="round"/>
     <!-- Right collar wing -->
-    <path d="M290,510 C282,504 272,498 262,494 L248,510 L266,516 C278,519 288,516 290,510 Z" fill="$[primary]" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M290,510 C282,503 270,497 258,494 L246,508 L264,514 C278,517 289,514 290,510 Z" fill="$[primary]" stroke="#000" stroke-width="2.5" stroke-linejoin="round"/>
     <!-- Button placket -->
-    <rect x="196" y="510" width="8" height="100" rx="1" fill="$[primary]" stroke="#000" stroke-width="1.5" opacity="0.6"/>
+    <rect x="197" y="510" width="6" height="80" rx="1" fill="$[primary]" stroke="#000" stroke-width="1.5" opacity="0.5"/>
     <!-- Buttons -->
-    <circle cx="200" cy="528" r="4" fill="#ddd" stroke="#999" stroke-width="1"/>
-    <circle cx="200" cy="548" r="4" fill="#ddd" stroke="#999" stroke-width="1"/>
-    <circle cx="200" cy="568" r="4" fill="#ddd" stroke="#999" stroke-width="1"/>
-    <circle cx="200" cy="588" r="4" fill="#ddd" stroke="#999" stroke-width="1"/>
+    <circle cx="200" cy="524" r="3.5" fill="#ddd" stroke="#999" stroke-width="1"/>
+    <circle cx="200" cy="542" r="3.5" fill="#ddd" stroke="#999" stroke-width="1"/>
+    <circle cx="200" cy="560" r="3.5" fill="#ddd" stroke="#999" stroke-width="1"/>
   </g>
 </svg>

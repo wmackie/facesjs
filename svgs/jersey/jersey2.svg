@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
   <g id="crew-neck">
-    <!-- Main body -->
-    <path d="M80,610 L80,520 C110,510 110,510 110,510 C120,590 200,592 200,592 C200,592 280,590 290,510 C290,510 290,510 320,520 L320,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+    <!-- Shirt body -->
+    <path d="M80,610 L80,520 C90,515 100,512 110,510 Q155,528 200,530 Q245,528 290,510 C300,512 310,515 320,520 L320,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
     <!-- Crew neck collar band -->
-    <path d="M138,502 C155,496 175,493 200,493 C225,493 245,496 262,502 L262,516 C248,511 226,508 200,508 C174,508 152,511 138,516 Z" fill="$[primary]" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M140,510 C156,502 176,498 200,498 C224,498 244,502 260,510 L260,524 C244,518 224,514 200,514 C176,514 156,518 140,524 Z" fill="$[primary]" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
   </g>
 </svg>

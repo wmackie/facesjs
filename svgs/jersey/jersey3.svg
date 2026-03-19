@@ -1,12 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
   <g id="v-neck">
-    <!-- Main body -->
-    <path d="M80,610 L80,520 C110,510 110,510 110,510 C120,590 200,592 200,592 C200,592 280,590 290,510 C290,510 290,510 320,520 L320,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
-    <!-- V-neck left -->
-    <path d="M138,502 L200,544" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
-    <!-- V-neck right -->
-    <path d="M262,502 L200,544" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round"/>
-    <!-- Shoulder seam hint (ribbing edge) -->
-    <path d="M110,510 C130,505 160,502 200,502 C240,502 270,505 290,510" fill="none" stroke="#000" stroke-width="2" opacity="0.35"/>
+    <!-- Shirt body — neckline IS the V shape -->
+    <path d="M80,610 L80,520 C90,515 100,512 110,510 L200,548 L290,510 C300,512 310,515 320,520 L320,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+    <!-- Shoulder seam -->
+    <path d="M110,510 C150,506 175,504 200,504 C225,504 250,506 290,510" fill="none" stroke="#000" stroke-width="2" opacity="0.3"/>
   </g>
 </svg>
