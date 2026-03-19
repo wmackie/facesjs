@@ -2,7 +2,6 @@ export const genders = {
   accessories: {
     beret: "both",
     fedora: "both",
-    fedora2: "both",
     none: "both",
     "stealth-beanie": "both",
   },

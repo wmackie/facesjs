@@ -95,6 +95,14 @@ const translate = (
 // Defines the range of fat/skinny, relative to the original width of the default head.
 const fatScale = (fatness: number) => 0.8 + 0.2 * fatness;
 
+// Y position (in 400x600 viewBox coords) below which hair remains visible when a hat is worn.
+// Hair above this line is clipped by the hat; hair that falls below (sides, back, long styles) shows through.
+const HAT_HAIR_CLIP_Y: Partial<Record<string, number>> = {
+  fedora: 210,
+  beret: 230,
+  "stealth-beanie": 241,
+};
+
 type FeatureInfo = {
   name: Exclude<keyof FaceConfig, "fatness" | "teamColors">;
   positions: [null] | [number, number][];
@@ -110,52 +118,8 @@ const drawFeature = (
   if (!feature || !svgs[info.name]) {
     return;
   }
-  if (
-    ["hat", "hat2", "hat3", "fedora", "stealth-beanie"].includes(
-      face.accessories.id,
-    ) &&
-    info.name == "hair"
-  ) {
-    if (
-      [
-        "afro",
-        "afro2",
-        "curly",
-        "curly2",
-        "curly3",
-        "faux-hawk",
-        "hair",
-        "high",
-        "juice",
-        "messy-short",
-        "messy",
-        "middle-part",
-        "parted",
-        "shaggy1",
-        "shaggy2",
-        "short3",
-        "spike",
-        "spike2",
-        "spike3",
-        "spike4",
-      ].includes(face.hair.id)
-    ) {
-      face.hair.id = "short";
-    } else if (
-      [
-        "blowoutFade",
-        "curlyFade1",
-        "curlyFade2",
-        "dreads",
-        "fauxhawk-fade",
-        "tall-fade",
-      ].includes(face.hair.id)
-    ) {
-      face.hair.id = "short-fade";
-    } else {
-      return;
-    }
-  }
+  const hatClipY = HAT_HAIR_CLIP_Y[face.accessories.id];
+  const isHairLayer = info.name === "hair" || info.name === "hairBg";
 
   // @ts-expect-error
   let featureSVGString = svgs[info.name][feature.id];
@@ -201,6 +165,13 @@ const drawFeature = (
 
   for (let i = 0; i < info.positions.length; i++) {
     svg.insertAdjacentHTML("beforeend", addWrapper(featureSVGString));
+
+    if (hatClipY !== undefined && isHairLayer) {
+      (svg.lastChild as Element).setAttribute(
+        "clip-path",
+        "url(#hat-hair-clip)",
+      );
+    }
 
     const position = info.positions[i];
 
@@ -290,6 +261,15 @@ export const display = (
 
   // Needs to be in the DOM here so getBBox will work
   containerElement.appendChild(svg);
+
+  // Inject a clipPath used to show only the below-brim portion of hair when a hat is worn.
+  const hatClipY = HAT_HAIR_CLIP_Y[face.accessories.id];
+  if (hatClipY !== undefined) {
+    svg.insertAdjacentHTML(
+      "beforeend",
+      `<defs><clipPath id="hat-hair-clip"><rect x="-200" y="${hatClipY}" width="800" height="${800 - hatClipY}"/></clipPath></defs>`,
+    );
+  }
 
   const featureInfos: FeatureInfo[] = [
     {
