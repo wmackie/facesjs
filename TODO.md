@@ -10,16 +10,17 @@ _(nothing currently blocking)_
 
 ## P2 — Core Work
 
-- [ ] Visual QA: start dev server, screenshot sample faces, verify spy aesthetic is landing
-- [ ] Audit `miscLine` SVGs — check forehead/chin lines work with redrawn jersey style
-- [ ] Add `outerwearBg` variants — hood/collar silhouettes for trench coat and overcoat (currently only `none`)
-- [ ] Review `turtleneck-adobe.svg` — SVG has no color token fill; likely renders in black only; add `$[primary]`
+- [ ] Female eye audit: some remaining female eye styles still read as "anime/kawaii" (eyelash-heavy, sparkle style). Review female5, female6, female7, female16 against spy aesthetic.
+- [ ] Add `outerwearBg` variants — hood/collar silhouettes for trench coat and overcoat that appear BEHIND the face (the layer currently always renders `none`)
+- [ ] Wire outerwearBg to outerwear selection in generate.ts (currently hardcoded to "none" regardless of outerwear id)
+- [ ] Audit `miscLine` SVGs — check forehead/chin lines work with current face style
+- [ ] Add sunglasses variant to `glasses`
 
 ## P3 — Polish
 
 - [ ] Consider `bodyShadow` layer (face-contour shadows tied to body.id — not yet implemented)
-- [ ] Add sunglasses variant to `glasses`
-- [ ] Tune outerwear probability and color distribution based on visual QA results
+- [ ] Tune outerwear color palette further — current palette is good but could add more variety (leather brown, navy, olive)
+- [ ] Jersey layer still shows "sleeveless" when outerwear is `none` — jersey SVGs have no sleeve geometry. Options: add sleeve paths to jerseys, or accept and keep outerwear probability at 80%.
 
 ## Deferred — After face system is solid
 
@@ -41,3 +42,12 @@ _(nothing currently blocking)_
 - [x] Removed sports hats (hat, hat2, hat3) and facemask glasses (2026-03-19)
 - [x] Outerwear already wired in editor stateStore.ts — confirmed (2026-03-19)
 - [x] Tuned generate() defaults: muted team colors, randomized gender (2026-03-19)
+- [x] Fixed jersey necklines: raised y=592 → y=530 (tank-top-strap issue resolved) (2026-03-19)
+- [x] Mouth audit: removed open-grin styles (mouth2, mouth3, mouth7, mouth8, smile, smile3) (2026-03-19)
+- [x] Overcoat.svg redrawn from scratch (was a baseball jersey placeholder) (2026-03-19)
+- [x] outerwearBg/none.svg fixed (was 0 bytes; now valid empty SVG) (2026-03-19)
+- [x] turtleneck-adobe.svg: fixed color tokens (was all-black; now $[primary]/$[secondary]) (2026-03-19)
+- [x] Eye audit: removed bug-eyed styles (eye1, eye3, female3, female11, female12) (2026-03-19)
+- [x] Outerwear probability raised 50% → 80% (2026-03-19)
+- [x] Hat hair clipping: replaced hair-swap system with SVG clipPath approach (2026-03-19)
+- [x] Fedora/fedora2 consolidated: fedora2 content merged into fedora.svg, fedora2 deleted (2026-03-19)
