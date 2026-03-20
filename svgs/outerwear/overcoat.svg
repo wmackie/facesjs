@@ -1,7 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
-  <g id="baseball">
-    <path fill="$[outerwearColor]" stroke="#000" stroke-width="6" d="M120,504.6c10,45.4,6.81,72.4,16.81,82.4s83.19,23,83.19,23H-5s5-40,5-50,10-30,40-40,50,0,80-15.4Z"/>
-    <path fill="$[outerwearColor]" stroke="#000" stroke-width="6" d="M360,520c30,10,40,30,40,40s10,50,10,50h-230s84.34,0,94.34-10-4.34-50,5.66-95c30,15,50,5,80,15Z"/>
+  <g id="overcoat">
+    <!-- Left front panel — wider, heavier than blazer -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="6" stroke-linejoin="round"
+      d="M0,610 L0,530 C24,514 68,500 112,494 L148,490 L152,520 L200,610 Z"/>
+    <!-- Right front panel -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="6" stroke-linejoin="round"
+      d="M400,610 L400,530 C376,514 332,500 288,494 L252,490 L248,520 L200,610 Z"/>
+    <!-- Left notch lapel — no lining flash, clean and formal -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="3" stroke-linejoin="round"
+      d="M112,494 L148,490 L152,518 L134,512 C122,508 110,503 112,494 Z"/>
+    <!-- Right notch lapel -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="3" stroke-linejoin="round"
+      d="M288,494 L252,490 L248,518 L266,512 C278,508 290,503 288,494 Z"/>
+    <!-- Notch cut — left -->
+    <path fill="none" stroke="#000" stroke-width="2"
+      d="M126,498 L138,490"/>
+    <!-- Notch cut — right -->
+    <path fill="none" stroke="#000" stroke-width="2"
+      d="M274,498 L262,490"/>
+    <!-- Center seam -->
+    <line x1="200" y1="518" x2="200" y2="610" stroke="#000" stroke-width="1.5" opacity="0.4"/>
+    <!-- Single-breasted, 3 buttons -->
+    <circle cx="200" cy="540" r="5" fill="#111" stroke="#444" stroke-width="1"/>
+    <circle cx="200" cy="564" r="5" fill="#111" stroke="#444" stroke-width="1"/>
+    <circle cx="200" cy="588" r="5" fill="#111" stroke="#444" stroke-width="1"/>
   </g>
-  <path fill="$[secondary]" stroke="#000" stroke-width="6" d="M34.65,513.19l85.69-15.19,75.54,116.59-43.88,4.84-117.35-106.24ZM365.35,513.19l-85.69-15.19-75.54,116.59,43.86,4.84,117.36-106.24Z"/>
 </svg>

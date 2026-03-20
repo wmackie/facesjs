@@ -1,0 +1,273 @@
+
+<div style="padding:1rem 0;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap">
+  <div style="flex:0 0 auto;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden">
+    <svg id="fsvg" width="240" height="300" viewBox="0 0 240 300" style="display:block"></svg>
+  </div>
+  <div style="flex:1;min-width:150px;padding-top:2px">
+    <div id="pnl" style="font-size:12px;color:var(--color-text-secondary);font-family:var(--font-mono);line-height:2;background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 14px;margin-bottom:12px"></div>
+    <button onclick="doRand()" style="width:100%">Randomize ↺</button>
+    <p style="font-size:11px;color:var(--color-text-tertiary);margin:10px 0 0;line-height:1.6">Neck now tucks behind the face oval for a cleaner join.</p>
+  </div>
+</div>
+<script>
+const SKINS=['#FDDBB4','#F5C28A','#E8A96A','#C68642','#8D5524','#3D1F0D'];
+const HAIRS=['#0D0A06','#2B1A0A','#5C3A1E','#9B6B2E','#C89F52','#787068','#C4BEB4'];
+const HNAMES=['Black','Dark Brown','Brown','Lt Brown','Blonde','Gray','White'];
+const IRIS=['#2B1A08','#4A7C59','#3B6FA0','#78591A','#2C4060'];
+const INAMES=['Brown','Green','Blue','Hazel','Steel'];
+const HSTYLES=['Crop','Medium','Long','Buzzcut','Slick','Waves','Updo'];
+
+function rnd(a,b){return a+Math.random()*(b-a);}
+function ri(a,b){return Math.floor(rnd(a,b+0.99));}
+function pick(a){return a[ri(0,a.length-1)];}
+function hexRgb(h){const r=/^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(h);return r?{r:parseInt(r[1],16),g:parseInt(r[2],16),b:parseInt(r[3],16)}:{r:180,g:130,b:90};}
+function blend(c1,c2,t){const a=hexRgb(c1),b=hexRgb(c2);return `rgb(${Math.round(a.r*(1-t)+b.r*t)},${Math.round(a.g*(1-t)+b.g*t)},${Math.round(a.b*(1-t)+b.b*t)})`;}
+function dark(hex,amt){const c=hexRgb(hex);return `rgb(${Math.round(c.r*(1-amt))},${Math.round(c.g*(1-amt))},${Math.round(c.b*(1-amt))})`;}
+function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
+function f2(n){return n.toFixed(2);}
+
+function gen(){
+  const gender=pick(['m','m','f','f','nb']);
+  const isFem=gender==='f',isMasc=gender==='m';
+  const age=ri(18,72);
+  const ageT=(age-18)/54;
+  let hairIdx;
+  const gr=Math.random();
+  if(ageT<0.28) hairIdx=ri(0,4);
+  else if(ageT<0.52) hairIdx=gr<0.35?ri(5,6):ri(0,5);
+  else hairIdx=gr<0.65?ri(5,6):ri(3,5);
+  let hairStyle;
+  if(isFem) hairStyle=pick([0,1,2,5,5,5,6,6]);
+  else if(isMasc) hairStyle=pick([0,1,2,3,4]);
+  else hairStyle=pick([0,1,2,3,5,6]);
+  const fhb=isMasc?Math.random()<0.38:gender==='nb'?Math.random()<0.08:false;
+  const gr2=Math.random();
+  const glasses=gr2<0.70?false:gr2<0.80?'rect':gr2<0.90?'round':'sun';
+  return {
+    gender,age,ageT,
+    fw:rnd(76,110),fh:rnd(126,158),
+    jwr:rnd(isFem?0.70:0.56,isFem?0.94:0.87),
+    skin:pick(SKINS),hair:HAIRS[hairIdx],iris:pick(IRIS),
+    eyeW:rnd(20,28),eyeH:rnd(7,isFem?13:11),eyeSep:rnd(54,74),
+    browT:rnd(isFem?1.2:1.8,isFem?2.2:3.0),
+    browA:rnd(3,9),browAng:rnd(-5,5),
+    noseW:rnd(isFem?11:13,isFem?18:21),noseL:rnd(20,32),
+    mouthW:rnd(isFem?24:26,isFem?38:40),
+    mouthC:rnd(-1,isFem?4:3),
+    lipT:rnd(isFem?0.46:0.38,isFem?0.70:0.62),
+    earW:rnd(10,15),earH:rnd(22,30),
+    hairStyle,bunX:rnd(-6,6),
+    glasses,fhair:fhb,fhType:ri(0,2),
+    neckW:rnd(isFem?28:33,isFem?40:46)
+  };
+}
+
+function makeSVG(p){
+  const W=240,H=300,cx=120,cy=148;
+  const fw=p.fw,fh=p.fh,jw=fw*p.jwr;
+  const top=cy-fh*0.52,bot=cy+fh*0.48;
+  const lc=cx-fw*0.5,rc=cx+fw*0.5;
+  const lj=cx-jw*0.5,rj=cx+jw*0.5;
+  const eyeY=cy-fh*0.09;
+  const hairFloor=eyeY-14;
+  const noseY=cy+fh*0.11;
+  const mouthY=cy+fh*0.28;
+  const nw2=p.neckW/2;
+  const lex=cx-p.eyeSep/2,rex=cx+p.eyeSep/2;
+  const irR=p.eyeH*0.52,pupR=p.eyeH*0.26;
+  const ageT=p.ageT;
+  const L='#0A0806';
+  const sd=dark(p.skin,0.22);
+  const hw=fw*0.55+10,ht=top-5;
+  const bt=eyeY+p.eyeH/2+5;
+
+  // Neck top starts well inside the face oval so the join is seamless
+  const neckTop=cy+fh*0.18;
+  const neckBot=H+2;
+
+  const foldOp=clamp((ageT-0.12)*1.5,0,0.82);
+  const wrinkOp=clamp((ageT-0.22)*1.8,0,0.88);
+  const bagOp=clamp((ageT-0.28)*1.6,0,0.68);
+  const crowOp=clamp((ageT-0.40)*2.0,0,0.72);
+
+  const jowl=ageT*0.06;
+  const face=`M${cx},${top}C${cx-fw*0.24},${top} ${lc},${cy-fh*0.19} ${lc},${cy}C${lc},${cy+fh*(0.19+jowl)} ${lj},${cy+fh*(0.35+jowl)} ${cx},${bot}C${rj},${cy+fh*(0.35+jowl)} ${rc},${cy+fh*(0.19+jowl)} ${rc},${cy}C${rc},${cy-fh*0.19} ${cx+fw*0.24},${top} ${cx},${top}Z`;
+
+  const earY=cy-p.earH*0.25;
+  const earL=`M${lc+2},${earY}C${lc-p.earW},${earY} ${lc-p.earW},${earY+p.earH} ${lc+2},${earY+p.earH}Z`;
+  const earR=`M${rc-2},${earY}C${rc+p.earW},${earY} ${rc+p.earW},${earY+p.earH} ${rc-2},${earY+p.earH}Z`;
+
+  // Neck: top edge tucked behind face, slightly tapered, runs to bottom of canvas
+  const neck=`M${cx-nw2},${neckTop}L${cx-nw2*0.9},${neckBot}L${cx+nw2*0.9},${neckBot}L${cx+nw2},${neckTop}Z`;
+
+  // Shirt starts where neck meets bottom of canvas
+  const cw=nw2*2.1;
+  const shirtTop=H-30;
+  const shirt=`M${cx-nw2*0.9},${neckBot}L${cx-cw},${H+2}L${cx+cw},${H+2}L${cx+nw2*0.9},${neckBot}Z`;
+  // Collar V lines — anchored lower now that neck is longer
+  const collarY=bot+28;
+
+  function eyeP(ex){
+    const ew=p.eyeW/2,eh=p.eyeH/2;
+    const droop=1-ageT*0.26;
+    return `M${ex-ew},${eyeY}C${ex-ew+ew*0.3},${eyeY-eh*1.7*droop} ${ex+ew*0.4},${eyeY-eh*1.9*droop} ${ex+ew},${eyeY}C${ex+ew*0.35},${eyeY+eh*1.2} ${ex-ew*0.3},${eyeY+eh*1.0} ${ex-ew},${eyeY}Z`;
+  }
+  function browP(ex,flip){
+    const off=flip?-p.browAng:p.browAng;
+    const bx1=ex-p.eyeW/2-3,bx2=ex+p.eyeW/2+3;
+    const by1=eyeY-p.eyeH/2-8+off,by2=eyeY-p.eyeH/2-8-off;
+    return `M${bx1},${by1}Q${ex},${Math.min(by1,by2)-p.browA} ${bx2},${by2}`;
+  }
+
+  const nbL=`M${cx-3},${bt}C${cx-4},${noseY-p.noseL*0.2} ${cx-p.noseW*0.35},${noseY} ${cx-p.noseW*0.45},${noseY+4}`;
+  const nbR=`M${cx+3},${bt}C${cx+4},${noseY-p.noseL*0.2} ${cx+p.noseW*0.35},${noseY} ${cx+p.noseW*0.45},${noseY+4}`;
+  const nstL=`M${cx-p.noseW*0.45},${noseY+4}Q${cx-p.noseW*0.55},${noseY+11} ${cx-4},${noseY+9}`;
+  const nstR=`M${cx+p.noseW*0.45},${noseY+4}Q${cx+p.noseW*0.55},${noseY+11} ${cx+4},${noseY+9}`;
+
+  const mw=p.mouthW/2,mc=p.mouthC,lh=p.eyeH*p.lipT;
+  const lipTop=blend(p.skin,'#B0585A',0.54);
+  const lipBot=blend(p.skin,'#B0585A',0.42);
+  const ulip=`M${cx-mw},${mouthY}Q${cx-mw*0.5},${mouthY-lh*1.6-mc} ${cx},${mouthY-lh+1}Q${cx+mw*0.5},${mouthY-lh*1.6-mc} ${cx+mw},${mouthY}`;
+  const llip=`M${cx-mw},${mouthY}Q${cx},${mouthY+lh*2.4+mc} ${cx+mw},${mouthY}`;
+
+  function hairPath(s){
+    const fl=hairFloor;
+    switch(s){
+      case 0:return `M${cx},${ht-22}C${cx-fw*0.24},${ht-17} ${lc-6},${cy-fh*0.38} ${lc-2},${fl}L${lc+2},${fl-4}C${lc+4},${fl-5} ${rc-4},${fl-5} ${rc-2},${fl-4}L${rc+2},${fl}C${rc+6},${cy-fh*0.38} ${cx+fw*0.24},${ht-17} ${cx},${ht-22}Z`;
+      case 1:return `M${lc-10},${fl}C${lc-14},${cy-fh*0.32} ${cx-hw*0.8},${ht-23} ${cx},${ht-29}C${cx+hw*0.8},${ht-23} ${rc+14},${cy-fh*0.32} ${rc+10},${fl}L${rc+5},${fl+6}C${rc},${fl+8} ${lc},${fl+8} ${lc-5},${fl+6}Z`;
+      case 2:return `M${lc-16},${cy+fh*0.22}C${lc-20},${cy} ${lc-16},${cy-fh*0.32} ${cx-hw*0.86},${ht-25}C${cx-hw*0.3},${ht-35} ${cx+hw*0.3},${ht-35} ${cx+hw*0.86},${ht-25}C${rc+16},${cy-fh*0.32} ${rc+20},${cy} ${rc+16},${cy+fh*0.22}L${rc+7},${cy+fh*0.4}C${rc+2},${cy+fh*0.37} ${lc-2},${cy+fh*0.37} ${lc-7},${cy+fh*0.4}Z`;
+      case 3:return `M${cx-fw*0.53},${cy-fh*0.05}C${cx-fw*0.53},${ht-4} ${cx},${ht-13} ${cx+fw*0.53},${ht-4}C${cx+fw*0.53},${cy-fh*0.05}Z`;
+      case 4:return `M${lc-6},${fl+4}C${lc-10},${cy-fh*0.36} ${cx-hw*0.7},${ht-19} ${cx-8},${ht-25}C${cx+34},${ht-29} ${cx+hw*0.9},${ht-15} ${rc+8},${fl+4}L${rc+4},${fl+10}C${rc-4},${fl+12} ${lc+4},${fl+12} ${lc-2},${fl+10}Z`;
+      case 5:return `M${cx},${ht-26}C${cx-hw*0.86},${ht-18} ${lc-18},${cy-fh*0.18} ${lc-16},${cy+fh*0.28}C${lc-14},${cy+fh*0.46} ${lc-10},${bot+20} ${cx-44},${H-18}L${cx+44},${H-18}C${cx+10},${bot+20} ${rc+14},${cy+fh*0.46} ${rc+16},${cy+fh*0.28}C${rc+18},${cy-fh*0.18} ${cx+hw*0.86},${ht-18} ${cx},${ht-26}Z`;
+      case 6:return `M${lc+4},${fl}C${lc+2},${cy-fh*0.30} ${cx-fw*0.32},${ht-1} ${cx},${ht-5}C${cx+fw*0.32},${ht-1} ${rc-2},${cy-fh*0.30} ${rc-4},${fl}L${rc-3},${fl+4}L${lc+3},${fl+4}Z`;
+    }
+  }
+
+  function fhP(t){
+    const my=mouthY,mb=bot;
+    if(t===0)return `M${cx-mw*1.3},${my-3}Q${cx},${mb-6} ${cx+mw*1.3},${my-3}Q${cx+mw*1.1},${mb+2} ${cx},${mb+4}Q${cx-mw*1.1},${mb+2} ${cx-mw*1.3},${my-3}Z`;
+    if(t===1)return `M${cx-mw*0.95},${my-5}Q${cx-mw*0.5},${my-13} ${cx},${my-6}Q${cx+mw*0.5},${my-13} ${cx+mw*0.95},${my-5}Q${cx+mw*0.5},${my+3} ${cx},${my}Q${cx-mw*0.5},${my+3} ${cx-mw*0.95},${my-5}Z`;
+    return `M${lj+6},${cy+fh*0.2}C${lc},${my-6} ${cx-mw*1.1},${my-9} ${cx-mw*0.95},${my-5}Q${cx},${my-9} ${cx+mw*0.95},${my-5}C${cx+mw*1.1},${my-9} ${rc},${my-6} ${rj-6},${cy+fh*0.2}Q${cx},${mb+16} ${lj+6},${cy+fh*0.2}Z`;
+  }
+
+  function glassFrameVars(){
+    const gw=p.eyeW+14,gh=p.eyeH+9,gy=eyeY-gh/2+1;
+    const glx=lex-gw/2,grx=rex-gw/2,r=Math.min(gw,gh)/2;
+    return {gw,gh,gy,glx,grx,r};
+  }
+  function rectGlassP(){
+    const {gw,gh,gy,glx,grx}=glassFrameVars();
+    const mid=gy+gh/2;
+    return `<rect x="${glx}" y="${gy}" width="${gw}" height="${gh}" rx="4" fill="none" stroke="${L}" stroke-width="2"/>
+<rect x="${grx}" y="${gy}" width="${gw}" height="${gh}" rx="4" fill="none" stroke="${L}" stroke-width="2"/>
+<line x1="${glx+gw}" y1="${mid}" x2="${grx}" y2="${mid}" stroke="${L}" stroke-width="1.6"/>
+<line x1="${glx}" y1="${mid}" x2="${lc-4}" y2="${mid+5}" stroke="${L}" stroke-width="1.6"/>
+<line x1="${grx+gw}" y1="${mid}" x2="${rc+4}" y2="${mid+5}" stroke="${L}" stroke-width="1.6"/>`;
+  }
+  function roundGlassP(){
+    const {r}=glassFrameVars();
+    const mid=eyeY;
+    return `<circle cx="${lex}" cy="${eyeY}" r="${r}" fill="none" stroke="${L}" stroke-width="2"/>
+<circle cx="${rex}" cy="${eyeY}" r="${r}" fill="none" stroke="${L}" stroke-width="2"/>
+<line x1="${lex+r}" y1="${mid}" x2="${rex-r}" y2="${mid}" stroke="${L}" stroke-width="1.6"/>
+<line x1="${lex-r}" y1="${mid}" x2="${lc-4}" y2="${mid+5}" stroke="${L}" stroke-width="1.6"/>
+<line x1="${rex+r}" y1="${mid}" x2="${rc+4}" y2="${mid+5}" stroke="${L}" stroke-width="1.6"/>`;
+  }
+  function sunGlassP(){
+    const gw=p.eyeW+18,gh=p.eyeH+13,gy=eyeY-gh/2+1;
+    const glx=lex-gw/2,grx=rex-gw/2,mid=gy+gh/2;
+    return `<rect x="${glx}" y="${gy}" width="${gw}" height="${gh}" rx="5" fill="#111" opacity="0.88"/>
+<rect x="${grx}" y="${gy}" width="${gw}" height="${gh}" rx="5" fill="#111" opacity="0.88"/>
+<rect x="${glx}" y="${gy}" width="${gw}" height="${gh}" rx="5" fill="none" stroke="${L}" stroke-width="2.2"/>
+<rect x="${grx}" y="${gy}" width="${gw}" height="${gh}" rx="5" fill="none" stroke="${L}" stroke-width="2.2"/>
+<line x1="${glx+gw}" y1="${mid}" x2="${grx}" y2="${mid}" stroke="${L}" stroke-width="1.8"/>
+<line x1="${glx}" y1="${mid}" x2="${lc-5}" y2="${mid+5}" stroke="${L}" stroke-width="1.8"/>
+<line x1="${grx+gw}" y1="${mid}" x2="${rc+5}" y2="${mid+5}" stroke="${L}" stroke-width="1.8"/>`;
+  }
+  function glassP(){
+    if(p.glasses==='rect') return rectGlassP();
+    if(p.glasses==='round') return roundGlassP();
+    if(p.glasses==='sun') return sunGlassP();
+    return '';
+  }
+
+  let age_fx='';
+  if(foldOp>0.01){
+    age_fx+=`<path d="M${cx-p.noseW*0.5},${noseY+8}Q${cx-p.mouthW*0.54},${mouthY-5} ${cx-p.mouthW*0.52},${mouthY+5}" fill="none" stroke="${sd}" stroke-width="0.9" opacity="${f2(foldOp)}" stroke-linecap="round"/>`;
+    age_fx+=`<path d="M${cx+p.noseW*0.5},${noseY+8}Q${cx+p.mouthW*0.54},${mouthY-5} ${cx+p.mouthW*0.52},${mouthY+5}" fill="none" stroke="${sd}" stroke-width="0.9" opacity="${f2(foldOp)}" stroke-linecap="round"/>`;
+  }
+  if(wrinkOp>0.01) age_fx+=`<path d="M${cx-fw*0.30},${eyeY-fh*0.17}Q${cx},${eyeY-fh*0.205} ${cx+fw*0.30},${eyeY-fh*0.17}" fill="none" stroke="${sd}" stroke-width="0.8" opacity="${f2(wrinkOp)}" stroke-linecap="round"/>`;
+  if(wrinkOp>0.44) age_fx+=`<path d="M${cx-fw*0.22},${eyeY-fh*0.11}Q${cx},${eyeY-fh*0.135} ${cx+fw*0.22},${eyeY-fh*0.11}" fill="none" stroke="${sd}" stroke-width="0.65" opacity="${f2(wrinkOp*0.68)}" stroke-linecap="round"/>`;
+  if(bagOp>0.01){
+    age_fx+=`<path d="M${lex-p.eyeW*0.42},${eyeY+p.eyeH*0.55+2}Q${lex},${eyeY+p.eyeH+5} ${lex+p.eyeW*0.42},${eyeY+p.eyeH*0.55+2}" fill="none" stroke="${sd}" stroke-width="0.7" opacity="${f2(bagOp)}" stroke-linecap="round"/>`;
+    age_fx+=`<path d="M${rex-p.eyeW*0.42},${eyeY+p.eyeH*0.55+2}Q${rex},${eyeY+p.eyeH+5} ${rex+p.eyeW*0.42},${eyeY+p.eyeH*0.55+2}" fill="none" stroke="${sd}" stroke-width="0.7" opacity="${f2(bagOp)}" stroke-linecap="round"/>`;
+  }
+  if(crowOp>0.01){
+    const ox=p.eyeW*0.5;
+    age_fx+=`<line x1="${lex-ox-1}" y1="${eyeY-2}" x2="${lex-ox-8}" y2="${eyeY-6}" stroke="${sd}" stroke-width="0.6" opacity="${f2(crowOp)}" stroke-linecap="round"/>`;
+    age_fx+=`<line x1="${lex-ox}" y1="${eyeY+1}" x2="${lex-ox-7}" y2="${eyeY+5}" stroke="${sd}" stroke-width="0.55" opacity="${f2(crowOp)}" stroke-linecap="round"/>`;
+    age_fx+=`<line x1="${rex+ox+1}" y1="${eyeY-2}" x2="${rex+ox+8}" y2="${eyeY-6}" stroke="${sd}" stroke-width="0.6" opacity="${f2(crowOp)}" stroke-linecap="round"/>`;
+    age_fx+=`<line x1="${rex+ox}" y1="${eyeY+1}" x2="${rex+ox+7}" y2="${eyeY+5}" stroke="${sd}" stroke-width="0.55" opacity="${f2(crowOp)}" stroke-linecap="round"/>`;
+  }
+
+  const isBgHair=p.hairStyle===2||p.hairStyle===5;
+  const isUpdo=p.hairStyle===6;
+  const hf=`fill="${p.hair}" stroke="${L}" stroke-width="1.4" stroke-linejoin="round"`;
+
+  // Draw order: bg → bg-hair → neck → shirt → ears → face → fg-hair → features
+  return `<rect width="${W}" height="${H}" fill="#F0EDE6"/>
+${isBgHair?`<path d="${hairPath(p.hairStyle)}" ${hf}/>`:''}
+<path d="${neck}" fill="${p.skin}" stroke="none"/>
+<path d="${shirt}" fill="#1C2138" stroke="${L}" stroke-width="1.4"/>
+<line x1="${cx-nw2*0.5}" y1="${collarY}" x2="${cx}" y2="${collarY+22}" stroke="${L}" stroke-width="1"/>
+<line x1="${cx+nw2*0.5}" y1="${collarY}" x2="${cx}" y2="${collarY+22}" stroke="${L}" stroke-width="1"/>
+<path d="${earL}" fill="${p.skin}" stroke="${L}" stroke-width="1.4"/>
+<path d="${earR}" fill="${p.skin}" stroke="${L}" stroke-width="1.4"/>
+<path d="${face}" fill="${p.skin}" stroke="${L}" stroke-width="1.6" stroke-linejoin="round"/>
+<ellipse cx="${cx-fw*0.28}" cy="${cy+fh*0.06}" rx="${fw*0.14}" ry="${fh*0.09}" fill="${sd}" opacity="0.1"/>
+<ellipse cx="${cx+fw*0.28}" cy="${cy+fh*0.06}" rx="${fw*0.14}" ry="${fh*0.09}" fill="${sd}" opacity="0.1"/>
+${!isBgHair&&!isUpdo?`<path d="${hairPath(p.hairStyle)}" ${hf}/>`:''}
+${isUpdo?`<path d="${hairPath(6)}" ${hf}/><ellipse cx="${cx+p.bunX}" cy="${ht-14}" rx="12" ry="9" fill="${p.hair}" stroke="${L}" stroke-width="1.4"/>`:''}
+<path d="${browP(lex,false)}" fill="none" stroke="${dark(p.hair,0.08)}" stroke-width="${p.browT*1.1}" stroke-linecap="round"/>
+<path d="${browP(rex,true)}" fill="none" stroke="${dark(p.hair,0.08)}" stroke-width="${p.browT*1.1}" stroke-linecap="round"/>
+<path d="${eyeP(lex)}" fill="white" stroke="${L}" stroke-width="1"/>
+<path d="${eyeP(rex)}" fill="white" stroke="${L}" stroke-width="1"/>
+<circle cx="${lex}" cy="${eyeY}" r="${irR}" fill="${p.iris}"/>
+<circle cx="${rex}" cy="${eyeY}" r="${irR}" fill="${p.iris}"/>
+<circle cx="${lex}" cy="${eyeY}" r="${pupR}" fill="${L}"/>
+<circle cx="${rex}" cy="${eyeY}" r="${pupR}" fill="${L}"/>
+<circle cx="${lex-irR*0.3}" cy="${eyeY-irR*0.38}" r="${irR*0.19}" fill="white" opacity="0.82"/>
+<circle cx="${rex-irR*0.3}" cy="${eyeY-irR*0.38}" r="${irR*0.19}" fill="white" opacity="0.82"/>
+<path d="${eyeP(lex)}" fill="none" stroke="${L}" stroke-width="1.2"/>
+<path d="${eyeP(rex)}" fill="none" stroke="${L}" stroke-width="1.2"/>
+<path d="${nbL}" fill="none" stroke="${L}" stroke-width="1.0" opacity="0.65"/>
+<path d="${nbR}" fill="none" stroke="${L}" stroke-width="1.0" opacity="0.65"/>
+<path d="${nstL}" fill="none" stroke="${L}" stroke-width="1.1"/>
+<path d="${nstR}" fill="none" stroke="${L}" stroke-width="1.1"/>
+${age_fx}
+${p.fhair?`<path d="${fhP(p.fhType)}" fill="${blend(p.hair,p.skin,0.25)}" stroke="${blend(p.hair,p.skin,0.3)}" stroke-width="0.6" opacity="0.86"/>`: ''}
+<path d="${ulip}" fill="${lipTop}" stroke="${L}" stroke-width="1" stroke-linejoin="round"/>
+<path d="${llip}" fill="${lipBot}" stroke="${L}" stroke-width="1" stroke-linejoin="round"/>
+<path d="M${cx-3},${mouthY-lh*1.1-mc*0.4}Q${cx},${mouthY-lh*0.7} ${cx+3},${mouthY-lh*1.1-mc*0.4}" fill="none" stroke="${sd}" stroke-width="0.6" opacity="0.55"/>
+${p.glasses?glassP():''}`;
+}
+
+function doRand(){
+  const p=gen();
+  document.getElementById('fsvg').innerHTML=makeSVG(p);
+  const hn=HNAMES[HAIRS.indexOf(p.hair)]||'–';
+  const hn2=INAMES[IRIS.indexOf(p.iris)]||'–';
+  const gl={m:'Male',f:'Female',nb:'Nonbinary'}[p.gender];
+  const ag=p.age<30?'Young':p.age<50?'Middle':p.age<65?'Senior':'Elderly';
+  const fht=['Stubble','Mustache','Beard'];
+  const gnames={rect:'Rect',round:'Round',sun:'Sunglass'};
+  document.getElementById('pnl').innerHTML=
+    `<div>Age &nbsp;&nbsp;${p.age} <span style="opacity:0.5">${ag}</span></div>
+     <div>Gender ${gl}</div>
+     <div>Hair &nbsp;&nbsp;${hn} · ${HSTYLES[p.hairStyle]||'–'}</div>
+     <div>Eyes &nbsp;&nbsp;${hn2}</div>
+     <div>Facial ${p.fhair?fht[p.fhType]:'None'}</div>
+     <div>Glass &nbsp;${p.glasses?gnames[p.glasses]:'No'}</div>`;
+}
+doRand();
+</script>
