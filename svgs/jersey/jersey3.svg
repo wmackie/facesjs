@@ -1,8 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
-  <g id="v-neck">
+  <g
+     id="v-neck">
     <!-- Shirt body — neckline IS the V shape -->
-    <path d="M40,610 L40,530 C55,518 80,510 110,510 L200,548 L290,510 C320,510 345,518 360,530 L360,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+    <path
+       d="M40,610 L40,530 C55,518 80,510 110,510 L200,548 L290,510 C320,510 345,518 360,530 L360,610 Z"
+       fill="$[primary]"
+       stroke="#000"
+       stroke-width="5"
+       stroke-linejoin="round" />
     <!-- Shoulder seam -->
-    <path d="M110,510 C150,506 175,504 200,504 C225,504 250,506 290,510" fill="none" stroke="#000" stroke-width="2" opacity="0.3"/>
   </g>
 </svg>

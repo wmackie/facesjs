@@ -1,16 +1,59 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
-  <g id="dress-shirt">
+  <g
+     id="dress-shirt">
     <!-- Shirt body with shallow neckline opening -->
-    <path d="M0,610 C0,572 8,544 25,524 C48,508 78,503 110,510 Q155,528 200,530 Q245,528 290,510 C322,503 352,508 375,524 C392,544 400,572 400,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+    <path
+       d="M0,610 C0,572 8,544 25,524 C48,508 78,503 110,510 Q155,528 200,530 Q245,528 290,510 C322,503 352,508 375,524 C392,544 400,572 400,610 Z"
+       fill="$[primary]"
+       stroke="#000"
+       stroke-width="5"
+       stroke-linejoin="round" />
     <!-- Left collar wing -->
-    <path d="M110,510 C118,503 130,497 142,494 L154,508 L136,514 C122,517 111,514 110,510 Z" fill="$[primary]" stroke="#000" stroke-width="2.5" stroke-linejoin="round"/>
+    <path
+       d="m 110,510 c 8,-7 20,-13 32,-16 l 5.37748,29.23179 -10.3841,-7.57616 C 122.99338,518.65563 111,514 110,510 Z"
+       fill="$[primary]"
+       stroke="#000000"
+       stroke-width="2.5"
+       stroke-linejoin="round" />
     <!-- Right collar wing -->
-    <path d="M290,510 C282,503 270,497 258,494 L246,508 L264,514 C278,517 289,514 290,510 Z" fill="$[primary]" stroke="#000" stroke-width="2.5" stroke-linejoin="round"/>
+    <path
+       d="m 290,510 c -8,-7 -20,-13 -32,-16 L 254.27815,521.57616 264,517.64238 c 14,3 25,-3.64238 26,-7.64238 z"
+       fill="$[primary]"
+       stroke="#000000"
+       stroke-width="2.5"
+       stroke-linejoin="round" />
+    <rect
+       x="197.33113"
+       y="531.85431"
+       width="6"
+       height="80"
+       rx="1"
+       fill="$[primary]"
+       stroke="#000000"
+       stroke-width="1.5"
+       opacity="0.5" />
+    <circle
+       cx="200.33113"
+       cy="545.85431"
+       r="3.5"
+       fill="#dddddd"
+       stroke="#999999"
+       stroke-width="1" />
+    <circle
+       cx="200.33113"
+       cy="563.85431"
+       r="3.5"
+       fill="#dddddd"
+       stroke="#999999"
+       stroke-width="1" />
+    <circle
+       cx="200.33113"
+       cy="581.85431"
+       r="3.5"
+       fill="#dddddd"
+       stroke="#999999"
+       stroke-width="1" />
     <!-- Button placket -->
-    <rect x="197" y="510" width="6" height="80" rx="1" fill="$[primary]" stroke="#000" stroke-width="1.5" opacity="0.5"/>
     <!-- Buttons -->
-    <circle cx="200" cy="524" r="3.5" fill="#ddd" stroke="#999" stroke-width="1"/>
-    <circle cx="200" cy="542" r="3.5" fill="#ddd" stroke="#999" stroke-width="1"/>
-    <circle cx="200" cy="560" r="3.5" fill="#ddd" stroke="#999" stroke-width="1"/>
   </g>
 </svg>

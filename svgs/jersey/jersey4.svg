@@ -1,14 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
-  <g id="henley">
+  <g
+     id="henley">
     <!-- Shirt body -->
-    <path d="M0,610 C0,572 8,544 25,524 C48,508 78,503 110,510 Q155,528 200,530 Q245,528 290,510 C322,503 352,508 375,524 C392,544 400,572 400,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+    <path
+       d="M0,610 C0,572 8,544 25,524 C48,508 78,503 110,510 Q155,528 200,530 Q245,528 290,510 C322,503 352,508 375,524 C392,544 400,572 400,610 Z"
+       fill="$[primary]"
+       stroke="#000"
+       stroke-width="5"
+       stroke-linejoin="round" />
     <!-- Neckline -->
-    <path d="M144,510 C160,502 178,498 200,498 C222,498 240,502 256,510" fill="none" stroke="#000" stroke-width="2" opacity="0.4"/>
     <!-- Henley placket -->
-    <rect x="195" y="498" width="10" height="36" rx="3" fill="$[primary]" stroke="#000" stroke-width="2"/>
+    <rect
+       x="195.52609"
+       y="530.64526"
+       width="9.6100864"
+       height="53.490879"
+       rx="2.8830259"
+       fill="$[primary]"
+       stroke="#000000"
+       stroke-width="2.38991" />
     <!-- Buttons -->
-    <circle cx="200" cy="510" r="3" fill="#ddd" stroke="#888" stroke-width="1"/>
-    <circle cx="200" cy="522" r="3" fill="#ddd" stroke="#888" stroke-width="1"/>
-    <circle cx="200" cy="534" r="3" fill="#ddd" stroke="#888" stroke-width="1"/>
+    <circle
+       cx="200.33113"
+       cy="542.45032"
+       fill="#dddddd"
+       stroke="#888888"
+       stroke-width="1"
+       r="3" />
+    <circle
+       cx="200.33113"
+       cy="569.45001"
+       fill="#dddddd"
+       stroke="#888888"
+       stroke-width="1"
+       r="3" />
+    <circle
+       cx="200.33113"
+       cy="596.45001"
+       fill="#dddddd"
+       stroke="#888888"
+       stroke-width="1"
+       r="3" />
   </g>
 </svg>

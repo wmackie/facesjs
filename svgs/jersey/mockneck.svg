@@ -1,8 +1,19 @@
-<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
-  <g id="mockneck">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
+  <g
+     id="mockneck">
     <!-- Shirt body -->
-    <path d="M0,610 C0,572 8,544 25,524 C48,508 78,503 110,510 Q155,528 200,530 Q245,528 290,510 C322,503 352,508 375,524 C392,544 400,572 400,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+    <path
+       d="m 0,610 c 0,-38 8,-66 25,-86 23,-16 53,-21 85,-14 30.99338,-2.23841 56.02649,0.12362 86.02649,1.45695 30,-1.33333 62.98013,-4.02651 93.97351,-1.45695 32,-7 62,-2 85,14 17,20 25,48 25,86 z"
+       fill="$[primary]"
+       stroke="#000000"
+       stroke-width="5"
+       stroke-linejoin="round" />
     <!-- Mock neck collar band — sits higher, wraps the neck -->
-    <path d="M144,512 C158,503 178,498 200,498 C222,498 242,503 256,512 L256,530 C242,523 222,518 200,518 C178,518 158,523 144,530 Z" fill="$[primary]" stroke="#000" stroke-width="3" stroke-linejoin="round"/>
+    <path
+       d="m 144,515.99991 c 14,9 34,14 56,14 22,0 42,-5 56,-14 v -18 c -14,7 -34,12 -56,12 -22,0 -42,-5 -56,-12 z"
+       fill="$[primary]"
+       stroke="#000000"
+       stroke-width="3"
+       stroke-linejoin="round" />
   </g>
 </svg>
