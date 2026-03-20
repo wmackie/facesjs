@@ -1,19 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
-  <g
-     id="crew-neck">
+  <g id="crew-neck">
     <!-- Shirt body -->
-    <path
-       d="M0,610 C0,572 8,544 25,524 C48,508 78,503 110,510 Q155,528 200,530 Q245,528 290,510 C322,503 352,508 375,524 C392,544 400,572 400,610 Z"
-       fill="$[primary]"
-       stroke="#000"
-       stroke-width="5"
-       stroke-linejoin="round" />
-    <!-- Crew neck collar band -->
-    <path
-       d="m 139.66887,515.97344 c 16,8 36,12 60,12 24,0 44,-4 60,-12 v -14 c -16,6 -36,10 -60,10 -24,0 -44,-4 -60,-10 z"
-       fill="$[primary]"
-       stroke="#000000"
-       stroke-width="3"
-       stroke-linejoin="round" />
+    <path d="M0,610 C0,572 8,544 25,524 C48,508 78,503 110,510 Q155,528 200,530 Q245,528 290,510 C322,503 352,508 375,524 C392,544 400,572 400,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+    <!-- Crew neck collar band — fill only, no stroke so it blends with shirt body -->
+    <path d="m 139.66887,515.97344 c 16,8 36,12 60,12 24,0 44,-4 60,-12 v -14 c -16,6 -36,10 -60,10 -24,0 -44,-4 -60,-10 z" fill="$[primary]"/>
+    <!-- Top fold arc only -->
+    <path d="M260,502 C244,508 224,512 200,512 C176,512 156,508 140,502" fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"/>
   </g>
 </svg>
