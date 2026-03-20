@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
   <g id="dress-shirt">
     <!-- Shirt body with shallow neckline opening -->
-    <path d="M80,610 L80,520 C90,515 100,512 110,510 Q155,528 200,530 Q245,528 290,510 C300,512 310,515 320,520 L320,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
+    <path d="M0,610 C0,572 8,544 25,524 C48,508 78,503 110,510 Q155,528 200,530 Q245,528 290,510 C322,503 352,508 375,524 C392,544 400,572 400,610 Z" fill="$[primary]" stroke="#000" stroke-width="5" stroke-linejoin="round"/>
     <!-- Left collar wing -->
     <path d="M110,510 C118,503 130,497 142,494 L154,508 L136,514 C122,517 111,514 110,510 Z" fill="$[primary]" stroke="#000" stroke-width="2.5" stroke-linejoin="round"/>
     <!-- Right collar wing -->
