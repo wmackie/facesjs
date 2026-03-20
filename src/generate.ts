@@ -192,7 +192,7 @@ export const generate = (
         id: Math.random() < 0.2 ? getID("accessories", gender) : "none",
       },
       outerwear: {
-        id: Math.random() < 0.5 ? getID("outerwear", gender) : "none",
+        id: Math.random() < 0.8 ? getID("outerwear", gender) : "none",
         color: randChoice([
           "#1C1C1C",
           "#36454F",
