@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <g id="peacoat-collar-bg">
+    <!-- Wide peacoat collar — heavier than trench coat, no lining.
+         Head, body, and outerwear clip the center. -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="6" stroke-linejoin="round"
+      d="M 0,528
+         L 0,450
+         C 55,410 130,408 165,440
+         L 200,464
+         L 235,440
+         C 270,408 345,410 400,450
+         L 400,528
+         Z"/>
+  </g>
+</svg>

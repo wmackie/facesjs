@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <g id="hoodie-hood-bg">
+    <!-- Hood draped behind the head. Head, hair, body, and outerwear layers
+         clip the center naturally. The visible result is the hood dome framing
+         the sides and top of the head, giving the "hood down" look. -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M 0,535
+         L 0,395
+         C 0,215 72,85 200,62
+         C 328,85 400,215 400,395
+         L 400,535
+         Z"/>
+    <!-- Hood opening rim — the rolled/hemmed edge visible at the hood opening -->
+    <path fill="none" stroke="#000" stroke-width="7" stroke-linecap="round"
+      d="M 0,395 C 0,215 72,85 200,62 C 328,85 400,215 400,395"/>
+    <!-- Inner rim highlight (gives the hood opening depth) -->
+    <path fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="4"
+      d="M 8,398 C 8,220 78,92 200,70 C 322,92 392,220 392,398"/>
+  </g>
+</svg>

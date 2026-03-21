@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <g id="hoodie">
+    <!-- Left panel -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M0,610 L0,532 C26,516 68,503 112,497 L152,493 L152,610 Z"/>
+    <!-- Right panel -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M400,610 L400,532 C374,516 332,503 288,497 L248,493 L248,610 Z"/>
+    <!-- Center chest panel -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="4"
+      d="M152,493 C172,487 190,485 200,485 C210,485 228,487 248,493 L248,610 L152,610 Z"/>
+    <!-- Ribbed neckline band -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="3" stroke-linejoin="round"
+      d="M112,497 C148,488 172,485 200,485 C228,485 252,488 288,497 L288,510 C252,503 228,500 200,500 C172,500 148,503 112,510 Z"/>
+    <!-- Drawstrings -->
+    <line x1="190" y1="488" x2="180" y2="545" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="210" y1="488" x2="220" y2="545" stroke="#000" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Drawstring tips -->
+    <circle cx="178" cy="547" r="4" fill="#444" stroke="#222" stroke-width="1"/>
+    <circle cx="222" cy="547" r="4" fill="#444" stroke="#222" stroke-width="1"/>
+    <!-- Kangaroo pocket -->
+    <path fill="none" stroke="#000" stroke-width="3" stroke-linejoin="round"
+      d="M148,554 L148,596 Q200,602 252,596 L252,554 Q200,548 148,554 Z"/>
+    <!-- Raglan seam lines -->
+    <line x1="152" y1="493" x2="0" y2="534" stroke="#000" stroke-width="2" opacity="0.3"/>
+    <line x1="248" y1="493" x2="400" y2="534" stroke="#000" stroke-width="2" opacity="0.3"/>
+  </g>
+</svg>
