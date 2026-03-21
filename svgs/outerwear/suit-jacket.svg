@@ -16,9 +16,9 @@
     <polygon points="168,532 180,530 179,520 167,522" fill="$[accent]" stroke="#000" stroke-width="1"/>
     <!-- Center seam -->
     <line x1="200" y1="524" x2="200" y2="610" stroke="#000" stroke-width="1.5" opacity="0.4"/>
-    <!-- 2-button suit -->
-    <circle cx="200" cy="548" r="5" fill="#111" stroke="#444" stroke-width="1"/>
-    <circle cx="200" cy="573" r="5" fill="#111" stroke="#444" stroke-width="1"/>
+    <!-- 2-button suit — both on left panel painted area -->
+    <circle cx="155" cy="548" r="5" fill="#111" stroke="#444" stroke-width="1"/>
+    <circle cx="168" cy="575" r="5" fill="#111" stroke="#444" stroke-width="1"/>
     <!-- Sleeve button detail (right cuff, partially visible) -->
     <circle cx="326" cy="600" r="3" fill="#111" stroke="#444" stroke-width="1"/>
     <circle cx="337" cy="602" r="3" fill="#111" stroke="#444" stroke-width="1"/>

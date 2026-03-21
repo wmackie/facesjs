@@ -14,9 +14,9 @@
       d="M284,500 L248,496 L242,522 L262,516 C274,511 287,506 284,500 Z"/>
     <!-- Center seam -->
     <line x1="200" y1="522" x2="200" y2="610" stroke="#000" stroke-width="1.5" opacity="0.4"/>
-    <!-- Buttons -->
-    <circle cx="200" cy="542" r="5" fill="#111" stroke="#444" stroke-width="1"/>
-    <circle cx="200" cy="564" r="5" fill="#111" stroke="#444" stroke-width="1"/>
-    <circle cx="200" cy="586" r="5" fill="#111" stroke="#444" stroke-width="1"/>
+    <!-- Buttons along left panel inner fold — all inside painted area -->
+    <circle cx="163" cy="546" r="5" fill="#111" stroke="#444" stroke-width="1"/>
+    <circle cx="173" cy="568" r="5" fill="#111" stroke="#444" stroke-width="1"/>
+    <circle cx="183" cy="590" r="5" fill="#111" stroke="#444" stroke-width="1"/>
   </g>
 </svg>

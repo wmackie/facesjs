@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <g id="vest">
+    <!-- Left front panel — sleeveless, deep-V opening -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M0,610 L0,542 C30,526 72,514 116,508 L150,504 L168,534 L200,610 Z"/>
+    <!-- Right front panel -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M400,610 L400,542 C370,526 328,514 284,508 L250,504 L232,534 L200,610 Z"/>
+    <!-- Left deep-V notch lapel -->
+    <path fill="$[primary]" stroke="#000" stroke-width="2" stroke-linejoin="round"
+      d="M116,508 L150,504 L168,532 L146,526 C132,521 118,514 116,508 Z"/>
+    <!-- Right deep-V notch lapel -->
+    <path fill="$[primary]" stroke="#000" stroke-width="2" stroke-linejoin="round"
+      d="M284,508 L250,504 L232,532 L254,526 C268,521 282,514 284,508 Z"/>
+    <!-- Center seam -->
+    <line x1="200" y1="532" x2="200" y2="610" stroke="#000" stroke-width="1.5" opacity="0.35"/>
+    <!-- Buttons — on left panel painted area (inner fold line) -->
+    <circle cx="173" cy="548" r="4.5" fill="#111" stroke="#444" stroke-width="1"/>
+    <circle cx="180" cy="570" r="4.5" fill="#111" stroke="#444" stroke-width="1"/>
+    <circle cx="187" cy="592" r="4.5" fill="#111" stroke="#444" stroke-width="1"/>
+    <!-- Left welt pocket — on left panel -->
+    <path fill="none" stroke="#000" stroke-width="1.5" opacity="0.55"
+      d="M124,546 L148,543"/>
+    <!-- Right welt pocket -->
+    <path fill="none" stroke="#000" stroke-width="1.5" opacity="0.55"
+      d="M252,543 L276,546"/>
+    <!-- Armhole bound edge -->
+    <path fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" opacity="0.4"
+      d="M116,508 C108,522 106,535 0,542"/>
+    <path fill="none" stroke="#000" stroke-width="2.5" stroke-linecap="round" opacity="0.4"
+      d="M284,508 C292,522 294,535 400,542"/>
+  </g>
+</svg>

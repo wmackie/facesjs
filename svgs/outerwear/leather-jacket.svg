@@ -6,22 +6,22 @@
     <!-- Right front panel -->
     <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
       d="M400,610 L400,538 C372,520 330,505 286,499 L250,495 L246,520 L200,610 Z"/>
-    <!-- Left moto lapel — angular, asymmetric -->
+    <!-- Left moto lapel — angular -->
     <path fill="$[outerwearColor]" stroke="#000" stroke-width="2.5" stroke-linejoin="round"
       d="M114,499 L150,495 L154,518 L130,512 C118,507 112,502 114,499 Z"/>
     <!-- Right moto lapel -->
     <path fill="$[outerwearColor]" stroke="#000" stroke-width="2.5" stroke-linejoin="round"
       d="M286,499 L250,495 L246,518 L270,512 C282,507 288,502 286,499 Z"/>
-    <!-- Zip track — off-center, angled left (moto style) -->
+    <!-- Zip track — off-center left (moto style), closes on left panel -->
     <line x1="200" y1="520" x2="196" y2="610" stroke="#555" stroke-width="2.5" opacity="0.8"/>
-    <!-- Zip pull -->
-    <rect x="192" y="524" width="10" height="5" rx="1" fill="#888" stroke="#555" stroke-width="1"/>
-    <!-- Left chest strap pocket -->
+    <!-- Zip pull — on the zip track, clearly on the left panel -->
+    <rect x="191" y="524" width="10" height="5" rx="1" fill="#888" stroke="#555" stroke-width="1"/>
+    <!-- Left chest strap pocket — on the left panel painted area -->
     <path fill="none" stroke="#000" stroke-width="2" stroke-linejoin="round" opacity="0.6"
       d="M118,516 L148,513 L149,525 L119,528 Z"/>
-    <!-- Pocket snap -->
+    <!-- Pocket snap — clearly on left panel -->
     <circle cx="148" cy="519" r="2" fill="#666" stroke="#444" stroke-width="0.5"/>
-    <!-- Shoulder seam lines — give structure -->
+    <!-- Shoulder seam lines -->
     <line x1="150" y1="495" x2="0" y2="540" stroke="#000" stroke-width="1.5" opacity="0.25"/>
     <line x1="250" y1="495" x2="400" y2="540" stroke="#000" stroke-width="1.5" opacity="0.25"/>
     <!-- Waist cinch stitching line -->

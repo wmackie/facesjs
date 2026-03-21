@@ -1,36 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
   <g id="trench-coat">
-    <!-- Left front panel (wide, dramatic) -->
+    <!-- Right front panel (drawn first — behind left) -->
     <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
-      d="M0,610 L0,522 C22,506 62,493 104,488 L140,484 L146,516 L200,610 Z"/>
-    <!-- Right front panel -->
+      d="M400,610 L400,522 C378,506 338,493 296,488 L260,484 L180,510 L185,610 Z"/>
+    <!-- Left front panel (wider, overlaps right — double-breasted) -->
     <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
-      d="M400,610 L400,522 C378,506 338,493 296,488 L260,484 L254,516 L200,610 Z"/>
+      d="M0,610 L0,522 C22,506 62,493 104,488 L140,484 L220,510 L215,610 Z"/>
     <!-- Left wide lapel outer -->
     <path fill="$[outerwearColor]" stroke="#000" stroke-width="3" stroke-linejoin="round"
-      d="M104,488 L140,484 L146,514 L120,521 C109,517 100,506 104,488 Z"/>
+      d="M104,488 L140,484 L220,510 L190,516 C166,516 100,506 104,488 Z"/>
     <!-- Left lapel lining ($[secondary]) -->
     <path fill="$[secondary]" stroke="none"
-      d="M108,490 L138,486 L143,512 L122,518 C113,514 105,505 108,490 Z"/>
+      d="M108,490 L138,486 L215,509 L190,515 C168,514 105,505 108,490 Z"/>
     <!-- Right wide lapel outer -->
     <path fill="$[outerwearColor]" stroke="#000" stroke-width="3" stroke-linejoin="round"
-      d="M296,488 L260,484 L254,514 L280,521 C291,517 300,506 296,488 Z"/>
+      d="M296,488 L260,484 L180,510 L210,516 C234,516 300,506 296,488 Z"/>
     <!-- Right lapel lining -->
     <path fill="$[secondary]" stroke="none"
-      d="M292,490 L262,486 L257,512 L278,518 C287,514 295,505 292,490 Z"/>
+      d="M292,490 L262,486 L185,509 L210,515 C232,514 295,505 292,490 Z"/>
     <!-- Left epaulette -->
     <path fill="$[secondary]" stroke="#000" stroke-width="2"
       d="M54,496 L40,491 L42,502 L56,507 Z"/>
     <!-- Right epaulette -->
     <path fill="$[secondary]" stroke="#000" stroke-width="2"
       d="M346,496 L360,491 L358,502 L344,507 Z"/>
-    <!-- Double-breasted buttons (two columns) -->
-    <circle cx="188" cy="536" r="4.5" fill="#111" stroke="#444" stroke-width="1"/>
+    <!-- Double-breasted buttons — right column on left panel, left column on right panel -->
     <circle cx="212" cy="536" r="4.5" fill="#111" stroke="#444" stroke-width="1"/>
-    <circle cx="188" cy="558" r="4.5" fill="#111" stroke="#444" stroke-width="1"/>
+    <circle cx="188" cy="536" r="4.5" fill="#111" stroke="#444" stroke-width="1"/>
     <circle cx="212" cy="558" r="4.5" fill="#111" stroke="#444" stroke-width="1"/>
-    <circle cx="188" cy="580" r="4.5" fill="#111" stroke="#444" stroke-width="1"/>
+    <circle cx="188" cy="558" r="4.5" fill="#111" stroke="#444" stroke-width="1"/>
     <circle cx="212" cy="580" r="4.5" fill="#111" stroke="#444" stroke-width="1"/>
+    <circle cx="188" cy="580" r="4.5" fill="#111" stroke="#444" stroke-width="1"/>
     <!-- Belt buckle at waist -->
     <rect x="186" y="596" width="28" height="10" rx="2" fill="#888" stroke="#555" stroke-width="1.5"/>
     <rect x="196" y="596" width="8" height="10" rx="1" fill="#bbb" stroke="#777" stroke-width="0.5"/>
