@@ -118,6 +118,24 @@ export const generate = (
     const skinColor = randChoice(palette.skin);
     const hairColor = randChoice(palette.hair);
 
+    const outerwearId =
+      Math.random() < 0.8 ? getID("outerwear", gender) : "none";
+    const outerwearColor = randChoice([
+      "#1C1C1C",
+      "#36454F",
+      "#1B2A4A",
+      "#3D2B1F",
+      "#C19A6B",
+      "#4A5240",
+      "#4A4A4A",
+    ]);
+    // Auto-pair outerwearBg: if a bg variant exists for this outerwear style, use it
+    const outerwearBgId = (svgsIndex.outerwearBg as readonly string[]).includes(
+      outerwearId,
+    )
+      ? outerwearId
+      : "none";
+
     face = {
       fatness: getRandUniform("fatness", gender),
       teamColors: defaultTeamColors,
@@ -128,7 +146,7 @@ export const generate = (
             : "none",
       },
       outerwearBg: {
-        id: "none",
+        id: outerwearBgId,
       },
       body: {
         id: getID("body", gender),
@@ -192,16 +210,8 @@ export const generate = (
         id: Math.random() < 0.2 ? getID("accessories", gender) : "none",
       },
       outerwear: {
-        id: Math.random() < 0.8 ? getID("outerwear", gender) : "none",
-        color: randChoice([
-          "#1C1C1C",
-          "#36454F",
-          "#1B2A4A",
-          "#3D2B1F",
-          "#C19A6B",
-          "#4A5240",
-          "#4A4A4A",
-        ]),
+        id: outerwearId,
+        color: outerwearColor,
       },
     };
   }

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <g id="overcoat-collar-bg">
+    <!-- Left raised collar wing — heavier/wider than trench coat -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M38,516 L112,492 L128,456 L50,472 Z"/>
+    <!-- Right raised collar wing -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M362,516 L288,492 L272,456 L350,472 Z"/>
+  </g>
+</svg>

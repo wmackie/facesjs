@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <g id="trench-coat-collar-bg">
+    <!-- Left raised collar wing — visible beside/behind lower jaw -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="4" stroke-linejoin="round"
+      d="M42,512 L106,488 L124,454 L55,468 Z"/>
+    <!-- Left collar lining -->
+    <path fill="$[secondary]" stroke="none"
+      d="M106,488 L122,458 L114,462 L102,488 Z"/>
+    <!-- Right raised collar wing -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="4" stroke-linejoin="round"
+      d="M358,512 L294,488 L276,454 L345,468 Z"/>
+    <!-- Right collar lining -->
+    <path fill="$[secondary]" stroke="none"
+      d="M294,488 L278,458 L286,462 L298,488 Z"/>
+  </g>
+</svg>
