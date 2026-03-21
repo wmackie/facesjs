@@ -1,16 +1,32 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
   <g id="trench-coat-collar-bg">
-    <!-- Left raised collar wing — visible beside/behind lower jaw -->
-    <path fill="$[outerwearColor]" stroke="#000" stroke-width="4" stroke-linejoin="round"
-      d="M42,512 L106,488 L124,454 L55,468 Z"/>
-    <!-- Left collar lining -->
+    <!-- Full raised collar band spanning shoulder to shoulder.
+         Head, body, and outerwear layers clip the center naturally.
+         Only the collar wings to each side of the face will be visible. -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M 0,524
+         L 0,452
+         C 45,412 115,412 150,440
+         L 200,468
+         L 250,440
+         C 285,412 355,412 400,452
+         L 400,524
+         Z"/>
+    <!-- Collar lining: inside face of the folded lapel -->
     <path fill="$[secondary]" stroke="none"
-      d="M106,488 L122,458 L114,462 L102,488 Z"/>
-    <!-- Right raised collar wing -->
-    <path fill="$[outerwearColor]" stroke="#000" stroke-width="4" stroke-linejoin="round"
-      d="M358,512 L294,488 L276,454 L345,468 Z"/>
-    <!-- Right collar lining -->
+      d="M 0,452
+         C 45,412 115,412 150,440
+         L 118,454
+         C 88,432 44,432 0,465
+         Z"/>
     <path fill="$[secondary]" stroke="none"
-      d="M294,488 L278,458 L286,462 L298,488 Z"/>
+      d="M 400,452
+         C 355,412 285,412 250,440
+         L 282,454
+         C 312,432 356,432 400,465
+         Z"/>
+    <!-- Collar seam / fold crease lines -->
+    <line x1="0" y1="460" x2="118" y2="454" stroke="#000" stroke-width="1.5" opacity="0.4"/>
+    <line x1="400" y1="460" x2="282" y2="454" stroke="#000" stroke-width="1.5" opacity="0.4"/>
   </g>
 </svg>

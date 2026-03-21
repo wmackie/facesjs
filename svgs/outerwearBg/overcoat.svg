@@ -1,10 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
   <g id="overcoat-collar-bg">
-    <!-- Left raised collar wing — heavier/wider than trench coat -->
-    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
-      d="M38,516 L112,492 L128,456 L50,472 Z"/>
-    <!-- Right raised collar wing -->
-    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
-      d="M362,516 L288,492 L272,456 L350,472 Z"/>
+    <!-- Full collar band — heavier/flatter than trench coat, like a peacoat or overcoat.
+         Head, body, and outerwear layers clip the center. -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="6" stroke-linejoin="round"
+      d="M 0,532
+         L 0,455
+         C 55,418 128,420 162,448
+         L 200,470
+         L 238,448
+         C 272,420 345,418 400,455
+         L 400,532
+         Z"/>
+    <!-- No lining on overcoat — clean, single-layer collar like a peacoat -->
   </g>
 </svg>
