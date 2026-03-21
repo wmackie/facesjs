@@ -11,12 +11,14 @@ _(nothing currently blocking)_
 ## P2 — Core Work
 
 - [ ] Female eye audit / new eye drawings — existing styles left intact; user is drawing new female eye SVGs to add. Drop `name.female.svg` in `svgs/eye/` and rebuild. No code changes needed.
+- [ ] Add 2-3 more female-appropriate head shapes — currently only 5 female-accessible heads (female1-3, head13, head14). More variety needed for female character distinctiveness.
 
 ## P3 — Polish
 
 - [ ] Consider `bodyShadow` layer (face-contour shadows tied to body.id — not yet implemented)
 - [ ] Outerwear collar bg is subtle — consider extending collar wings further upward to y≈440 for more visible raised-collar effect
 - [ ] Review sunglasses probability — currently 18% total for all glasses (2/9 variants are sunglasses). Could weight them separately if needed.
+- [ ] Audit male eye styles for any remaining sports/cartoonish styles
 
 ## Deferred — After face system is solid
 
@@ -58,3 +60,9 @@ _(nothing currently blocking)_
 - [x] Expand outerwear color palette (12 colors: navy, leather brown, burgundy, forest green, blue-grey added) (2026-03-21)
 - [x] Jersey sleeveless issue reviewed — body shoulder silhouette handles it; no SVG changes needed (2026-03-21)
 - [x] Promoted eye12/eye13/eye15 from male-only to both (2026-03-21)
+- [x] Add hoodie and peacoat outerwear + outerwearBg (2026-03-21)
+- [x] Add leather jacket outerwear + outerwearBg (2026-03-21)
+- [x] Add vest outerwear (2026-03-21)
+- [x] Fix outerwear buttons: move to painted panel area; widen double-breasted overlap (2026-03-21)
+- [x] Remove mouth4 (open-mouth with teeth — breaks spy aesthetic) (2026-03-21)
+- [x] Reassign head2/head6/head16 to male-only to improve female character readability (2026-03-21)

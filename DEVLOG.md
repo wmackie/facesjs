@@ -4,6 +4,30 @@ _Maintained automatically by Claude. Most recent entry at top._
 
 ---
 
+## 2026-03-21 10:15 — Outerwear button fix; leather jacket; vest; mouth4 removed
+
+**What:** Four changes:
+1. Fixed systemic button placement bug across all outerwear — buttons were rendering in the gap between front panels (on top of jersey), not on the outerwear itself. Single-breasted styles (blazer, suit-jacket, overcoat) now have button column following left panel inner fold. Double-breasted styles (trench-coat, peacoat) have widened panel inner edges to create real overlap zone so both button columns land on painted panels.
+2. Added leather-jacket.svg: moto-cut, angular lapels, zip closure, chest strap pocket, waist cinch stitching. Removed front buttons (correct — moto jackets zip). Added outerwearBg/leather-jacket.svg low collar band.
+3. Added vest.svg: sleeveless waistcoat, deep-V notch lapels in primary color, 3-button center front on left panel fold, welt pockets, armhole bound edges.
+4. Removed mouth4.svg: only remaining open-mouth style with white teeth visible — broke spy aesthetic.
+**Why:** User correctly flagged that buttons not attached to outerwear silhouette render on top of the jersey. Leather jacket and vest add variety to the outerwear pool.
+**Files changed:** blazer, suit-jacket, overcoat, trench-coat, peacoat, leather-jacket, vest SVGs; outerwearBg/leather-jacket; mouth/mouth4 deleted.
+**Result:** Build + tests pass (72/72). All outerwear buttons now clearly on painted panel area.
+**Notes:** For double-breasted, the fix also gives a more realistic silhouette — the left panel now visibly overlaps the right, which is how a real peacoat/trench-coat looks.
+
+---
+
+## 2026-03-21 10:25 — Female character readability: head gender reassignment
+
+**What:** Renamed head2.svg, head6.svg, head16.svg to head2.male.svg etc. These three "both" heads have squared jaws, prominent brow ridges, and features that read as male. Female characters now use only female1-3, head13, head14 (5 clearly feminine or gender-neutral heads).
+**Why:** 30-face female audit showed many characters reading as androgynous/male. Traced to masculine "both" head shapes being assigned to female characters.
+**Files changed:** svgs/head/head2, head6, head16 renamed.
+**Result:** Build + tests pass. Female character grid looks distinctly more feminine with better variety.
+**Notes:** Female pool now has 5 heads. Could use a couple more clearly feminine neutral heads in future.
+
+---
+
 ## 2026-03-21 09:35 — Sunglasses, outerwear colors, miscLine audit, jersey review
 
 **What:** Four items:

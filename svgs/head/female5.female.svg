@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <!-- Angular oval: slightly narrower and more defined jaw — determined operative look -->
+  <path fill="$[skinColor]" stroke="#000" stroke-width="6"
+    d="M200,104
+       C268,104 315,152 320,248
+       C325,316 318,374 294,414
+       C271,452 242,476 200,480
+       C158,476 129,452 106,414
+       C82,374 75,316 80,248
+       C85,152 132,104 200,104 Z"/>
+</svg>

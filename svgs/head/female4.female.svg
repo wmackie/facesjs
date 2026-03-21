@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <!-- Soft oval face: gently wider at cheekbones than chin, smooth taper -->
+  <path fill="$[skinColor]" stroke="#000" stroke-width="6"
+    d="M200,104
+       C275,104 328,152 334,248
+       C340,320 330,378 304,418
+       C280,455 250,478 200,482
+       C150,478 120,455 96,418
+       C70,378 60,320 66,248
+       C72,152 125,104 200,104 Z"/>
+</svg>
