@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <g id="leather-jacket-collar-bg">
+    <!-- Low moto collar — sits close to the neck, no tall lapel wings.
+         Upper layers clip the center. Slightly flatter/tighter than peacoat. -->
+    <path fill="$[outerwearColor]" stroke="#000" stroke-width="5" stroke-linejoin="round"
+      d="M 0,536
+         L 0,468
+         C 50,438 118,438 155,458
+         L 200,476
+         L 245,458
+         C 282,438 350,438 400,468
+         L 400,536
+         Z"/>
+  </g>
+</svg>
