@@ -204,7 +204,7 @@ export const generate = (
         size: getRandUniform("nose.size", gender),
       },
       glasses: {
-        id: Math.random() < 0.1 ? getID("glasses", gender) : "none",
+        id: Math.random() < 0.18 ? getID("glasses", gender) : "none",
       },
       accessories: {
         id: Math.random() < 0.2 ? getID("accessories", gender) : "none",

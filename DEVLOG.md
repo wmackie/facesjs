@@ -4,6 +4,21 @@ _Maintained automatically by Claude. Most recent entry at top._
 
 ---
 
+## 2026-03-21 09:30 — outerwearBg wiring + collar SVGs; gender-filename migration
+
+**What:** Three changes committed this session:
+1. Replaced `genders.js` manual registry with filename-based gender convention (`name.male.svg`, `name.female.svg`, `name.svg` = both). 199 files renamed via `git mv`. `process-svgs.js` now auto-discovers gender at build time.
+2. Wired `outerwearBg` to outerwear selection in `generate.ts`. Drawn `outerwearBg/trench-coat.svg` and `outerwearBg/overcoat.svg` — raised collar wings visible to sides of the lower face/jaw.
+3. Also committed in-progress directional eye variant feature (display.ts + eye2-variant*.svg) from last session.
+4. Promoted eye12/eye13/eye15 from male-only to both.
+
+**Why:** genders.js was a friction point when adding new SVGs. outerwearBg was scaffolded but hardcoded to "none". Collar detail adds depth to the spy coat look.
+**Files changed:** 205 files (renames) + generate.ts, process-svgs.js, display.ts, outerwearBg SVGs, eye SVGs.
+**Result:** Build passes, tests pass (72/72). Collar bg visually confirmed via SVG render comparison.
+**Notes:** Collar effect is intentionally subtle — wings visible at jaw sides. The "no bg" vs "with bg" difference is present but not dramatic. Future refinement possible by adjusting y-coordinates upward to extend collar higher alongside the face.
+
+---
+
 ## 2026-03-19 19:20 — Replace sports jerseys; delete sport accessory SVGs
 
 **What:** Deleted all sports-specific SVG files and redrawn all jersey-layer SVGs as spy-appropriate tops.

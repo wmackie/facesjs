@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600">
+  <g id="sunglasses-aviator">
+    <!-- Arms -->
+    <line x1="92" y1="298" x2="58" y2="308" stroke="#888" stroke-width="3" stroke-linecap="round"/>
+    <line x1="308" y1="298" x2="342" y2="308" stroke="#888" stroke-width="3" stroke-linecap="round"/>
+    <!-- Bridge -->
+    <path d="M188,300 Q200,293 212,300" fill="none" stroke="#888" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Left lens — teardrop: flat top, rounded bottom -->
+    <path d="M108,292 Q140,282 172,292 L176,308 Q176,342 140,346 Q104,342 104,308 Z"
+      fill="rgba(10,10,10,0.88)" stroke="#999" stroke-width="2"/>
+    <!-- Left lens glare -->
+    <line x1="116" y1="296" x2="126" y2="316" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Right lens — teardrop mirror -->
+    <path d="M228,292 Q260,282 292,292 L296,308 Q296,342 260,346 Q224,342 224,308 Z"
+      fill="rgba(10,10,10,0.88)" stroke="#999" stroke-width="2"/>
+    <!-- Right lens glare -->
+    <line x1="236" y1="296" x2="246" y2="316" stroke="rgba(255,255,255,0.25)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Nose pads -->
+    <path d="M186,302 L182,310" stroke="#aaa" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M214,302 L218,310" stroke="#aaa" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+</svg>
