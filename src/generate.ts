@@ -121,13 +121,18 @@ export const generate = (
     const outerwearId =
       Math.random() < 0.8 ? getID("outerwear", gender) : "none";
     const outerwearColor = randChoice([
-      "#1C1C1C",
-      "#36454F",
-      "#1B2A4A",
-      "#3D2B1F",
-      "#C19A6B",
-      "#4A5240",
-      "#4A4A4A",
+      "#1C1C1C", // near-black
+      "#36454F", // charcoal slate
+      "#1B2A4A", // dark navy
+      "#1A3860", // classic navy
+      "#3D2B1F", // dark espresso
+      "#7A4A28", // leather brown
+      "#C19A6B", // camel / tan
+      "#4A5240", // olive
+      "#2A4030", // forest green
+      "#4A1C24", // burgundy
+      "#4A4A4A", // mid grey
+      "#5A5A6A", // blue-grey
     ]);
     // Auto-pair outerwearBg: if a bg variant exists for this outerwear style, use it
     const outerwearBgId = (svgsIndex.outerwearBg as readonly string[]).includes(

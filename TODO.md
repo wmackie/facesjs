@@ -1,6 +1,6 @@
 # TODO — facesJS Fork
 
-_Last updated: 2026-03-19_
+_Last updated: 2026-03-21_
 
 ---
 
@@ -10,17 +10,13 @@ _(nothing currently blocking)_
 
 ## P2 — Core Work
 
-- [ ] Female eye audit: some remaining female eye styles still read as "anime/kawaii" (eyelash-heavy, sparkle style). Review female5, female6, female7, female16 against spy aesthetic.
-- [ ] Add `outerwearBg` variants — hood/collar silhouettes for trench coat and overcoat that appear BEHIND the face (the layer currently always renders `none`)
-- [ ] Wire outerwearBg to outerwear selection in generate.ts (currently hardcoded to "none" regardless of outerwear id)
-- [ ] Audit `miscLine` SVGs — check forehead/chin lines work with current face style
-- [ ] Add sunglasses variant to `glasses`
+- [ ] Female eye audit / new eye drawings — existing styles left intact; user is drawing new female eye SVGs to add. Drop `name.female.svg` in `svgs/eye/` and rebuild. No code changes needed.
 
 ## P3 — Polish
 
 - [ ] Consider `bodyShadow` layer (face-contour shadows tied to body.id — not yet implemented)
-- [ ] Tune outerwear color palette further — current palette is good but could add more variety (leather brown, navy, olive)
-- [ ] Jersey layer still shows "sleeveless" when outerwear is `none` — jersey SVGs have no sleeve geometry. Options: add sleeve paths to jerseys, or accept and keep outerwear probability at 80%.
+- [ ] Outerwear collar bg is subtle — consider extending collar wings further upward to y≈440 for more visible raised-collar effect
+- [ ] Review sunglasses probability — currently 18% total for all glasses (2/9 variants are sunglasses). Could weight them separately if needed.
 
 ## Deferred — After face system is solid
 
@@ -51,3 +47,14 @@ _(nothing currently blocking)_
 - [x] Outerwear probability raised 50% → 80% (2026-03-19)
 - [x] Hat hair clipping: replaced hair-swap system with SVG clipPath approach (2026-03-19)
 - [x] Fedora/fedora2 consolidated: fedora2 content merged into fedora.svg, fedora2 deleted (2026-03-19)
+- [x] Added sleeve geometry to 5 jersey styles, widened v-neck (2026-03-19)
+- [x] Fixed floating collar band on jersey2, mockneck, jersey5 (2026-03-19)
+- [x] Replaced genders.js with filename-based gender convention (.male/.female/.svg) (2026-03-21)
+- [x] Added directional eye variant support (-left/-right SVG pairs) in display.ts (2026-03-21)
+- [x] Wire outerwearBg to outerwear selection in generate.ts (2026-03-21)
+- [x] Add outerwearBg variants: trench-coat.svg, overcoat.svg collar wings (2026-03-21)
+- [x] Audit miscLine SVGs — all appropriate, no removals (2026-03-21)
+- [x] Add sunglasses variants: sunglasses-aviator, sunglasses-rect (2026-03-21)
+- [x] Expand outerwear color palette (12 colors: navy, leather brown, burgundy, forest green, blue-grey added) (2026-03-21)
+- [x] Jersey sleeveless issue reviewed — body shoulder silhouette handles it; no SVG changes needed (2026-03-21)
+- [x] Promoted eye12/eye13/eye15 from male-only to both (2026-03-21)

@@ -4,6 +4,20 @@ _Maintained automatically by Claude. Most recent entry at top._
 
 ---
 
+## 2026-03-21 09:35 — Sunglasses, outerwear colors, miscLine audit, jersey review
+
+**What:** Four items:
+1. Added sunglasses-aviator.svg and sunglasses-rect.svg to glasses layer — dark opaque lenses, both genders. Bumped glasses probability 10%→18%.
+2. Expanded outerwear color palette from 7 to 12 colors (added navy, leather brown, forest green, burgundy, blue-grey).
+3. miscLine audit: reviewed all variants visually — all appropriate for spy aesthetic. No removals.
+4. Jersey sleeveless review: with outerwear=none, all jerseys render acceptably — body's shoulder curve handles the silhouette. No SVG changes needed.
+**Why:** P2/P3 tasks from TODO. Sunglasses are a core spy look. Color variety improves randomization.
+**Files changed:** generate.ts (glasses prob, outerwear colors), sunglasses-aviator.svg, sunglasses-rect.svg, TODO.md.
+**Result:** Build + tests pass (72/72). Sunglasses visually confirmed against existing glasses styles.
+**Notes:** Aviator style is particularly on-brand. Rect style reads as modern operative.
+
+---
+
 ## 2026-03-21 09:30 — outerwearBg wiring + collar SVGs; gender-filename migration
 
 **What:** Three changes committed this session:
