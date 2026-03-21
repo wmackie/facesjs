@@ -11,7 +11,7 @@ _(nothing currently blocking)_
 ## P2 — Core Work
 
 - [ ] Female eye audit / new eye drawings — existing styles left intact; user is drawing new female eye SVGs to add. Drop `name.female.svg` in `svgs/eye/` and rebuild. No code changes needed.
-- [ ] Add 2-3 more female-appropriate head shapes — currently only 5 female-accessible heads (female1-3, head13, head14). More variety needed for female character distinctiveness.
+- [x] Add 2 more female head shapes — female4 (soft oval), female5 (narrow oval). Female pool now 7 heads. (2026-03-21)
 
 ## P3 — Polish
 

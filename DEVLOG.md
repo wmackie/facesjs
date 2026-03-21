@@ -18,6 +18,16 @@ _Maintained automatically by Claude. Most recent entry at top._
 
 ---
 
+## 2026-03-21 10:40 — Final autonomous session audit; no issues found
+
+**What:** Visual audits completed — male eyes (all 17 styles), female eyes (all 13 styles), hair "both" styles on female faces, accessories (fedora/beret/stealth-beanie), vest+jersey combinations (6 combinations), and 20-face alternating M/F grid.
+**Why:** Autonomous quality sweep before waiting for user input (new female eyes).
+**Files changed:** None (audit only).
+**Result:** No removals or fixes needed. Vest layers correctly over all jerseys. Accessories all spy-appropriate. Male eye audit: eye11 and eye18 are slightly wide but acceptable. Female eye styles: kept per prior user decision.
+**Notes:** Female character readability is now strong after head2/6/16 reassignment and female4/5 addition. Outstanding item: the single-breasted button positions are on the left panel inner fold (slightly left of center) — technically correct but differs from real-world coat refs. User approved this fix.
+
+---
+
 ## 2026-03-21 10:25 — Female character readability: head gender reassignment
 
 **What:** Renamed head2.svg, head6.svg, head16.svg to head2.male.svg etc. These three "both" heads have squared jaws, prominent brow ridges, and features that read as male. Female characters now use only female1-3, head13, head14 (5 clearly feminine or gender-neutral heads).
