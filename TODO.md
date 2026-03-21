@@ -18,7 +18,9 @@ _(nothing currently blocking)_
 - [ ] Consider `bodyShadow` layer (face-contour shadows tied to body.id — not yet implemented)
 - [ ] Outerwear collar bg is subtle — consider extending collar wings further upward to y≈440 for more visible raised-collar effect
 - [ ] Review sunglasses probability — currently 18% total for all glasses (2/9 variants are sunglasses). Could weight them separately if needed.
-- [ ] Audit male eye styles for any remaining sports/cartoonish styles
+- [x] Audit male eye styles — all 17 styles acceptable, no removals (2026-03-21)
+- [x] Remove spike/spike2/spike3 anime hair styles (2026-03-21)
+- [x] Reassign body2 to male-only (too wide for female) (2026-03-21)
 
 ## Deferred — After face system is solid
 

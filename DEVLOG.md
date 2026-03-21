@@ -18,6 +18,18 @@ _Maintained automatically by Claude. Most recent entry at top._
 
 ---
 
+## 2026-03-21 10:45 — Final cleanup: body2, spike hair styles
+
+**What:** Two more male-reassignments found during audit:
+1. body2.svg → body2.male.svg: wide-shouldered body reads as masculine/athletic on female characters. Female pool now uses body and body4.
+2. Removed spike.male.svg, spike2.male.svg, spike3.male.svg: rigid upward spike hairstyles read as anime/sports-avatar characters, not spy dossier portraits. spike4, faux-hawk, fauxhawk-fade, high, tall-fade kept (real-world barber styles).
+**Why:** Same audit principle as head gender reassignment — assets that break the spy aesthetic get removed or reassigned.
+**Files changed:** svgs/body/body2, svgs/hair/spike*.
+**Result:** Build + tests pass. Female character body pool narrowed to 2 shapes.
+**Notes:** pinocchio (aquiline) and honker (large round) nose styles audited — both read as realistic character features at portrait scale, kept.
+
+---
+
 ## 2026-03-21 10:40 — Final autonomous session audit; no issues found
 
 **What:** Visual audits completed — male eyes (all 17 styles), female eyes (all 13 styles), hair "both" styles on female faces, accessories (fedora/beret/stealth-beanie), vest+jersey combinations (6 combinations), and 20-face alternating M/F grid.
