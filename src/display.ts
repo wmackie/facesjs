@@ -122,49 +122,44 @@ const drawFeature = (
   const isHairLayer = info.name === "hair" || info.name === "hairBg";
 
   // @ts-expect-error
-  let featureSVGString = svgs[info.name][feature.id];
-  if (!featureSVGString) {
+  const baseRawSVG = svgs[info.name][feature.id];
+  if (!baseRawSVG) {
     return;
   }
 
-  // @ts-expect-error
-  if (feature.shave) {
+  const applyColorTokens = (svgString: string) => {
     // @ts-expect-error
-    featureSVGString = featureSVGString.replace("$[faceShave]", feature.shave);
-  }
+    if (feature.shave) {
+      // @ts-expect-error
+      svgString = svgString.replace("$[faceShave]", feature.shave);
+      // @ts-expect-error
+      svgString = svgString.replace("$[headShave]", feature.shave);
+    }
+    return svgString
+      .replace("$[skinColor]", face.body.color)
+      .replace(/\$\[outerwearColor\]/g, face.outerwear.color)
+      .replace(/\$\[hairColor\]/g, face.hair.color)
+      .replace(/\$\[primary\]/g, face.teamColors[0])
+      .replace(/\$\[secondary\]/g, face.teamColors[1])
+      .replace(/\$\[accent\]/g, face.teamColors[2]);
+  };
 
-  // @ts-expect-error
-  if (feature.shave) {
-    // @ts-expect-error
-    featureSVGString = featureSVGString.replace("$[headShave]", feature.shave);
-  }
-
-  featureSVGString = featureSVGString.replace("$[skinColor]", face.body.color);
-  featureSVGString = featureSVGString.replace(
-    /\$\[outerwearColor\]/g,
-    face.outerwear.color,
-  );
-  featureSVGString = featureSVGString.replace(
-    /\$\[hairColor\]/g,
-    face.hair.color,
-  );
-  featureSVGString = featureSVGString.replace(
-    /\$\[primary\]/g,
-    face.teamColors[0],
-  );
-  featureSVGString = featureSVGString.replace(
-    /\$\[secondary\]/g,
-    face.teamColors[1],
-  );
-  featureSVGString = featureSVGString.replace(
-    /\$\[accent\]/g,
-    face.teamColors[2],
-  );
+  const featureSVGString = applyColorTokens(baseRawSVG);
 
   const bodySize = face.body.size !== undefined ? face.body.size : 1;
 
   for (let i = 0; i < info.positions.length; i++) {
-    svg.insertAdjacentHTML("beforeend", addWrapper(featureSVGString));
+    // Check for directional (-left / -right) variants for paired features like eyes.
+    // If found, use the explicit variant SVG and skip mirroring for the right side.
+    const dirSuffix = i === 0 ? "-left" : "-right";
+    // @ts-expect-error
+    const dirRawSVG = svgs[info.name]?.[feature.id + dirSuffix];
+    const hasDirectionalVariant = !!dirRawSVG;
+    const svgStringForPosition = hasDirectionalVariant
+      ? applyColorTokens(dirRawSVG)
+      : featureSVGString;
+
+    svg.insertAdjacentHTML("beforeend", addWrapper(svgStringForPosition));
 
     if (hatClipY !== undefined && isHairLayer) {
       (svg.lastChild as Element).setAttribute(
@@ -199,6 +194,7 @@ const drawFeature = (
     }
 
     // Flip if feature.flip is specified or if this is the second position (for eyes and eyebrows). Scale if feature.size is specified.
+    // Skip mirroring if an explicit -right variant was used (it's already drawn for the correct side).
     // @ts-expect-error
     const scale = feature.hasOwnProperty("size") ? feature.size : 1;
     if (
@@ -209,7 +205,7 @@ const drawFeature = (
       // @ts-expect-error
       scaleCentered(svg.lastChild, bodySize, 1);
       // @ts-expect-error
-    } else if (feature.flip || i === 1) {
+    } else if ((feature.flip || i === 1) && !hasDirectionalVariant) {
       // @ts-expect-error
       scaleCentered(svg.lastChild, -scale, scale);
     } else if (scale !== 1) {
